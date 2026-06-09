@@ -399,10 +399,9 @@ updateProfileSummary();
           query: "corrective lessons update pack downloadable current lessons",
           answerTitle: "How corrective lesson updates work",
           answer:
-            "When NoDrift improves a correction pattern, the reusable lesson can be published as a buyer-safe update pack. The user can add that update to private project memory without replacing the full governance package or exposing private incident history.",
+            "When NoDrift improves a correction pattern, the reusable lesson can be delivered to buyers as a safe update pack. The user can add that update to private project memory without replacing the full governance package or exposing private incident history.",
           links: [
             { page: "Home", title: "Corrective Lessons Updates", url: "index.html#updates" },
-            { page: "Download", title: "Corrective Lessons Update Pack", url: "downloads/nodrift-corrective-lessons-update-pack-2026-06-07.md" },
             { page: "Evidence", title: "Corrective Training Loop", url: "audit-summary.html" },
             { page: "Best Practices", title: "Review Memory As Diffs", url: "best-practices.html#advanced-heading" },
           ],
@@ -885,7 +884,6 @@ updateProfileSummary();
           links: [
             { page: "Home", title: "Corrective Lessons Updates", url: "index.html#updates" },
             { page: "Evidence", title: "The NoDrift Corrective Training Loop", url: "audit-summary.html" },
-            { page: "Download", title: "Corrective Lessons Update Pack", url: "downloads/nodrift-corrective-lessons-update-pack-2026-06-07.md" },
             { page: "Best Practices", title: "Review Memory As Diffs", url: "best-practices.html#advanced-heading" },
           ],
         },
