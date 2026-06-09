@@ -1957,6 +1957,46 @@ h3,
   line-height: 1.65;
 }
 
+.private-redaction {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid rgba(231, 178, 76, 0.42);
+  border-radius: var(--radius);
+  background: rgba(231, 178, 76, 0.08);
+}
+
+.private-redaction strong {
+  color: var(--text);
+}
+
+.private-redaction p {
+  margin: 0;
+}
+
+.redaction-lines {
+  display: grid;
+  gap: 8px;
+  max-width: 520px;
+}
+
+.redaction-lines span {
+  display: block;
+  height: 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+  filter: blur(3px);
+}
+
+.redaction-lines span:nth-child(2) {
+  width: 86%;
+}
+
+.redaction-lines span:nth-child(3) {
+  width: 68%;
+}
+
 .span-two {
   grid-column: span 2;
 }
