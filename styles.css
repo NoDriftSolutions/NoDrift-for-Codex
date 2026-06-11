@@ -2062,6 +2062,19 @@ h3,
   text-transform: uppercase;
 }
 
+.metric-count-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(111, 215, 211, 0.7);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.metric-count-link:hover,
+.metric-count-link:focus-visible {
+  color: var(--teal);
+}
+
 .metric-list {
   display: grid;
   gap: 10px;

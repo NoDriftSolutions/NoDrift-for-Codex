@@ -37,6 +37,7 @@
       <nav id="site-navigation" class="nav-links" aria-label="Evidence links">
         <a href="index.html#top">Overview</a>
         <a class="active" href="audit-summary.html">Evidence</a>
+        <a href="technical-info.html">Technical</a>
         <a href="customize.html">Customize</a>
         <a href="best-practices.html">Best Practices</a>
         <a href="troubleshooting.html">Troubleshooting</a>
@@ -50,20 +51,21 @@
         <p class="eyebrow">Local evidence summary</p>
         <h1><span class="title-wordmark"><span class="wordmark-no">No</span><span class="wordmark-drift">Drift</span></span> Full Audit Summary</h1>
         <p class="hero-subtitle">
-          From May 27, 2026 to June 3, 2026, the governed Codex workspace produced high-output project,
+          From May 27, 2026 to June 10, 2026, the governed Codex workspace produced high-output project,
           controlled product, audit, and source-preparation work. The current internal record shows
-          0 confirmed drift, 0 confirmed hallucinations, 1 candidate incident under review, and incomplete audit
-          coverage. Direct local counts were measured June 4, 2026; historical figures and limitations are labeled below.
+          0 confirmed drift, 0 confirmed hallucinations, 1 candidate incident under review, 6 logged issue groups,
+          and incomplete audit coverage. Direct local counts were updated from the June 10, 2026 Codex Analytics
+          snapshot; historical figures and limitations are labeled below.
         </p>
       </section>
 
       <section class="section-shell metric-ribbon" aria-label="Headline audit results">
         <div>
-          <strong>188</strong>
+          <strong>243</strong>
           <span>Codex Analytics threads</span>
         </div>
         <div>
-          <strong>1,214</strong>
+          <strong>1,978</strong>
           <span>Codex Analytics turns</span>
         </div>
         <div>
@@ -71,8 +73,8 @@
           <span>confirmed drift</span>
         </div>
         <div>
-          <strong>1</strong>
-          <span>candidate under review</span>
+          <strong><a class="metric-count-link" href="error-log.html">6</a></strong>
+          <span>logged issue groups</span>
         </div>
         <div>
           <strong class="metric-word">Incomplete</strong>
@@ -94,6 +96,37 @@
         </div>
         <div class="evidence-carousel" data-evidence-carousel tabindex="0" aria-label="Weekly evidence snapshots">
           <div class="evidence-carousel-track">
+            <article id="snapshot-2026-06-10" class="evidence-snapshot-card" data-evidence-card>
+              <div class="snapshot-card-heading">
+                <div>
+                  <span class="snapshot-kicker">Latest evidence update</span>
+                  <h3>Period Ending June 10, 2026</h3>
+                  <p>Measured from Codex Analytics screenshot dated June 10, 2026</p>
+                </div>
+                <span class="coverage-badge is-incomplete">Coverage incomplete</span>
+              </div>
+              <div class="snapshot-metric-grid">
+                <div><strong>243</strong><span>threads</span></div>
+                <div><strong>1,978</strong><span>turns</span></div>
+                <div><strong>0</strong><span>confirmed drift</span></div>
+                <div><strong><a class="metric-count-link" href="error-log.html">6</a></strong><span>logged issue groups</span></div>
+              </div>
+              <div class="snapshot-detail-grid">
+                <div><span>Analytics range</span><strong>May 27 to June 10, 2026</strong></div>
+                <div><span>Usage pace</span><strong>Avg 16.2 threads/day; 131.9 turns/day</strong></div>
+                <div><span>Candidate status</span><strong>1 candidate incident remains unclassified</strong></div>
+                <div><span>Source labels</span><strong>Screenshot / file-verified / audit-recorded</strong></div>
+                <div><span>Corrected before publication</span><strong>Wordmark-class replacement and customization preset mismatch</strong></div>
+                <div><span>Deferred defect</span><strong>Free-preview mobile-menu issue; PT-BR page deferred from upload</strong></div>
+                <div><span>Private package review</span><strong>Governance/package readiness findings corrected or held behind installation gates</strong></div>
+                <div><span>Public identity issue</span><strong>Wrong organization avatar identified; website avatar added, org avatar still account-level</strong></div>
+              </div>
+              <p class="snapshot-limitation">
+                Logged issue groups are public-safe categories only. The private incident records, governance text,
+                exact file lists, and local source paths remain private. Confirmed zeros do not establish complete
+                detection while audit coverage is incomplete.
+              </p>
+            </article>
             <article id="snapshot-2026-06-04" class="evidence-snapshot-card" data-evidence-card>
               <div class="snapshot-card-heading">
                 <div>
@@ -160,9 +193,10 @@
             <div><dt>Recorded confirmed drift</dt><dd>0</dd></div>
             <div><dt>Recorded confirmed hallucination</dt><dd>0</dd></div>
             <div><dt>Candidate incidents under review</dt><dd>1</dd></div>
+            <div><dt>Logged issue groups in latest snapshot</dt><dd><a class="metric-count-link" href="error-log.html">6</a></dd></div>
             <div><dt>Recorded unauthorized actions</dt><dd>0</dd></div>
             <div><dt>Recorded project contamination</dt><dd>0</dd></div>
-            <div><dt>Recorded correction overhead events</dt><dd>1</dd></div>
+            <div><dt>Recorded correction overhead events</dt><dd>6 groups</dd></div>
             <div><dt>Audit coverage</dt><dd>Incomplete</dd></div>
           </dl>
         </article>
@@ -355,8 +389,8 @@
         <article class="detail-panel span-two">
           <h2>How <span class="title-wordmark"><span class="wordmark-no">No</span><span class="wordmark-drift">Drift</span></span> Works Across LLM Tools</h2>
           <p>
-            The same NoDrift method can be adapted to Codex, Claude Code, Claude, ChatGPT projects and agents, Gemini-style
-            workspaces, DeepSeek-style workspaces, and other LLM tools when the work environment supports persistent
+            The same NoDrift method can be adapted to Codex, Anthropic Claude Code, Google Gemini, Antigravity,
+            ChatGPT, Claude, Perplexity, and other AI tools when the work environment supports persistent
             instructions, project files, references, or repeatable workflow records.
           </p>
           <p>
@@ -364,7 +398,7 @@
             structure, and operating sequence are private internal information.
           </p>
           <p>
-            In Gemini-style and DeepSeek-style environments, the implementation changes by platform, but the receiving
+            Across different AI communication environments, the implementation changes by platform, but the receiving
             job stays the same: preserve the user's intent, separate verified facts from assumptions, keep decisions
             visible, and stop before actions that need approval.
           </p>
