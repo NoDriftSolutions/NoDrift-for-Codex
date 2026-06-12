@@ -521,6 +521,50 @@ button {
   text-shadow: 0 0 18px rgba(111, 215, 211, 0.14);
 }
 
+.hero-brand-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  row-gap: 0.12em;
+  width: min(100%, 640px);
+}
+
+.hero-title-intro {
+  justify-self: start;
+  font-size: 0.78em;
+}
+
+.hero-title-platform {
+  justify-self: end;
+}
+
+.hero-title-brand .hero-wordmark {
+  position: relative;
+  display: inline-block;
+  justify-self: center;
+  width: max-content;
+  margin: 0 0.1em;
+  color: #f6fbf8;
+  font-size: 1.34em;
+  font-weight: 920;
+  line-height: 1;
+  text-shadow:
+    0 0 12px rgba(111, 215, 211, 0.36),
+    0 0 28px rgba(231, 242, 74, 0.18);
+}
+
+.hero-title-brand .hero-wordmark::after {
+  content: "";
+  position: absolute;
+  left: 0.04em;
+  right: 0.04em;
+  bottom: -0.08em;
+  height: 0.08em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6fd7d3, #e7f24a);
+  box-shadow: 0 0 18px rgba(111, 215, 211, 0.34);
+}
+
 .hero-subtitle {
   max-width: 600px;
   margin: 24px 0 0;
@@ -549,6 +593,19 @@ button {
   justify-content: center;
   gap: 16px;
   margin-top: 30px;
+}
+
+.purchase-actions {
+  grid-template-columns: repeat(2, minmax(0, 258px));
+}
+
+.purchase-actions .button-secondary {
+  grid-column: 1 / -1;
+}
+
+.purchase-button {
+  min-height: 58px;
+  text-decoration: none;
 }
 
 .hero-actions .button {

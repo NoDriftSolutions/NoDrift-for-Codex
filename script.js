@@ -12,7 +12,8 @@ function showPlaceholder(message) {
 }
 
 document.querySelectorAll("[data-placeholder]").forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
     showPlaceholder(button.getAttribute("data-placeholder"));
   });
 });
@@ -362,7 +363,7 @@ updateProfileSummary();
           query: "payment price coming soon buy NoDrift Codex",
           answerTitle: "Current payment status",
           answer:
-            "Payment is not active yet. NoDrift for Codex v1 is listed as coming soon at $99, and the site does not currently collect payment.",
+            "Payment is not active yet. NoDrift for Codex v1 has two US packages: Basic for US$120 and Extended for US$245.",
           links: [
             { page: "Home", title: "FAQ", url: "index.html#faq" },
             { page: "Home", title: "Overview", url: "index.html#top" },
