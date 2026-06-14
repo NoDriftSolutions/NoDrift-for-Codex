@@ -71,15 +71,17 @@ button {
 }
 
 .brand-mark {
-  width: 58px;
-  height: 58px;
-  flex: 0 0 58px;
-  border-radius: 14px;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border-radius: 18px;
   object-fit: contain;
   background: #061010;
+  filter: brightness(1.16) contrast(1.14) saturate(1.08);
   box-shadow:
-    0 0 0 1px rgba(111, 215, 211, 0.34),
-    0 0 24px rgba(111, 215, 211, 0.2);
+    0 0 0 1px rgba(111, 215, 211, 0.48),
+    0 0 30px rgba(111, 215, 211, 0.26),
+    0 0 52px rgba(245, 178, 74, 0.12);
 }
 
 .brand-name {
@@ -2792,9 +2794,9 @@ h3,
   }
 
   .brand-mark {
-    width: 46px;
-    height: 46px;
-    flex-basis: 46px;
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
   }
 
   .header-action {

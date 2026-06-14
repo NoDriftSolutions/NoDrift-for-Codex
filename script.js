@@ -369,6 +369,66 @@ updateProfileSummary();
             { page: "Home", title: "Overview", url: "index.html#top" },
           ],
         },
+        {
+          key: "what-is-nodrift",
+          label: "What is NoDrift?",
+          query: "what is NoDrift governed AI workspace Codex",
+          answerTitle: "NoDrift in plain language",
+          answer:
+            "NoDrift is a governed workspace system for serious Codex work. It helps keep context, approvals, sources, evidence limits, and correction paths visible during long-running AI-assisted projects.",
+          links: [
+            { page: "Home", title: "Overview", url: "index.html#top" },
+            { page: "Best Practices", title: "Beginner Practices", url: "best-practices.html#beginner-heading" },
+          ],
+        },
+        {
+          key: "who-is-it-for",
+          label: "Who is it for?",
+          query: "founders developers consultants agencies researchers operations teams",
+          answerTitle: "Who NoDrift helps",
+          answer:
+            "NoDrift is for users and teams who use Codex for real work, especially when projects involve approvals, publishing, source material, client boundaries, or decisions that must survive beyond one chat.",
+          links: [
+            { page: "Home", title: "Who It Helps", url: "index.html#who" },
+            { page: "Home", title: "FAQ", url: "index.html#faq" },
+          ],
+        },
+        {
+          key: "replace-codex",
+          label: "Does it replace Codex?",
+          query: "replace Codex extension wrapper reception layer",
+          answerTitle: "NoDrift does not replace Codex",
+          answer:
+            "NoDrift does not replace Codex or change the AI model. It adds operating discipline around the workspace so the user and Codex work with clearer boundaries, records, and review habits.",
+          links: [
+            { page: "Evidence", title: "Reception Layer", url: "audit-summary.html" },
+            { page: "Technical", title: "Technical Review", url: "technical-info.html" },
+          ],
+        },
+        {
+          key: "voice-images",
+          label: "Can I use voice and images?",
+          query: "voice screenshots images show screen verify tasks",
+          answerTitle: "Use natural input, then verify",
+          answer:
+            "Yes. A NoDrift workflow can use voice, screenshots, pasted images, and careful review. The point is to give Codex better evidence and then verify what changed before trusting the result.",
+          links: [
+            { page: "Best Practices", title: "Beginner Practices", url: "best-practices.html#beginner-heading" },
+            { page: "Home", title: "FAQ", url: "index.html#faq" },
+          ],
+        },
+        {
+          key: "public-safe",
+          label: "What should not go public?",
+          query: "do not publish private governance correction records file lists",
+          answerTitle: "Keep private material private",
+          answer:
+            "Public pages can explain the product, problem, and safe evidence. They should not expose private workspace records, exact setup wording, diagnostic prompts, correction records, account details, or buyer-only operating material.",
+          links: [
+            { page: "Evidence", title: "Claim Boundary", url: "audit-summary.html" },
+            { page: "Troubleshooting", title: "Public Boundary", url: "troubleshooting.html#triage-heading" },
+          ],
+        },
       ],
     },
     {
@@ -407,6 +467,88 @@ updateProfileSummary();
             "Local preview, repository state, and live GitHub Pages are separate states. Buyer troubleshooting guidance explains how to check them safely.",
           links: [
             { page: "Troubleshooting", title: "Publishing", url: "troubleshooting.html#triage-heading" },
+          ],
+        },
+        {
+          key: "wrong-workspace",
+          label: "Wrong workspace?",
+          query: "wrong workspace folder path project files not found",
+          answerTitle: "Confirm the active workspace first",
+          answer:
+            "If Codex seems to be working in the wrong folder, stop forward work and confirm the active workspace before editing. A wrong workspace can make correct actions happen in the wrong place.",
+          links: [
+            { page: "Troubleshooting", title: "Common Problems", url: "troubleshooting.html#triage-heading" },
+          ],
+        },
+        {
+          key: "setup-skipped",
+          label: "Setup step was skipped",
+          query: "setup skipped installation order customization first run",
+          answerTitle: "Return to the setup order",
+          answer:
+            "If a setup step seems skipped, pause and verify the intended sequence before continuing. NoDrift is designed to make the workspace rules active before deeper project work begins.",
+          links: [
+            { page: "Troubleshooting", title: "Setup Problems", url: "troubleshooting.html#triage-heading" },
+            { page: "Customize", title: "Customize", url: "customize.html#workflow-settings-heading" },
+          ],
+        },
+        {
+          key: "overclaims",
+          label: "Codex overclaimed",
+          query: "overclaim complete verified audited evidence too broad",
+          answerTitle: "Narrow the claim to the evidence",
+          answer:
+            "If Codex says something is complete, verified, or ready, ask what evidence supports that exact claim. NoDrift separates checked work from plausible-sounding summary.",
+          links: [
+            { page: "Evidence", title: "Evidence Boundary", url: "audit-summary.html" },
+            { page: "Best Practices", title: "Question Claims", url: "best-practices.html#beginner-heading" },
+          ],
+        },
+        {
+          key: "lost-context",
+          label: "Context was lost",
+          query: "lost context continuation handoff memory topic map",
+          answerTitle: "Use continuity records",
+          answer:
+            "When context is missing or out of order, preserve the current objective, decisions, open questions, risks, files, and next actions before continuing. Do not reconstruct missing history from guesses.",
+          links: [
+            { page: "Home", title: "Continuity Records", url: "index.html#continuity-records" },
+            { page: "Evidence", title: "Continuity", url: "audit-summary.html" },
+          ],
+        },
+        {
+          key: "approval-boundary",
+          label: "When must Codex stop?",
+          query: "approval save publish post push delete move external action",
+          answerTitle: "Stop before consequential actions",
+          answer:
+            "Codex should stop before saving, publishing, pushing, deleting, moving, sending, configuring, or taking outside action unless the user gives explicit approval for that action point.",
+          links: [
+            { page: "Best Practices", title: "Approval Habits", url: "best-practices.html#advanced-heading" },
+            { page: "Troubleshooting", title: "Boundary Problems", url: "troubleshooting.html#triage-heading" },
+          ],
+        },
+        {
+          key: "browser-preview",
+          label: "Preview looks different",
+          query: "browser preview cached local stale refresh pages not updated",
+          answerTitle: "Check what you are actually viewing",
+          answer:
+            "A stale tab, local file, preview server, repository, and live site can all show different states. Verify the viewed URL and refresh path before assuming the website files are wrong.",
+          links: [
+            { page: "Troubleshooting", title: "Website State", url: "troubleshooting.html#triage-heading" },
+          ],
+        },
+        {
+          key: "private-files",
+          label: "Private files appeared",
+          query: "private files exposed public page correction records governance",
+          answerTitle: "Treat exposure risk as a stop condition",
+          answer:
+            "If private filenames, correction records, account details, or buyer-only language appear in public material, stop and remove or rewrite that content before publishing anything.",
+          links: [
+            { page: "Troubleshooting", title: "Privacy Problems", url: "troubleshooting.html#triage-heading" },
+            { page: "Evidence", title: "Public-Safe Evidence", url: "audit-summary.html" },
           ],
         },
       ],
@@ -448,6 +590,90 @@ updateProfileSummary();
           links: [
             { page: "Evidence", title: "Full Audit Summary", url: "audit-summary.html" },
             { page: "Best Practices", title: "Broad Claims", url: "best-practices.html#beginner-heading" },
+          ],
+        },
+        {
+          key: "source-discipline",
+          label: "Source discipline",
+          query: "source hierarchy files evidence verified references",
+          answerTitle: "Sources must stay visible",
+          answer:
+            "NoDrift favors visible source hierarchy: what was read, what was searched, what was verified, and what remains unchecked. That reduces stale assumptions and unsupported conclusions.",
+          links: [
+            { page: "Evidence", title: "Evidence Records", url: "audit-summary.html" },
+            { page: "Technical", title: "Technical Review", url: "technical-info.html" },
+          ],
+        },
+        {
+          key: "approval-gates",
+          label: "Approval gates",
+          query: "approval gates public external file changes user permission",
+          answerTitle: "Approval gates separate capability from permission",
+          answer:
+            "NoDrift treats ability and approval as different things. Codex may be able to edit, publish, or push, but consequential action still needs explicit user approval.",
+          links: [
+            { page: "Best Practices", title: "Advanced Practices", url: "best-practices.html#advanced-heading" },
+            { page: "Troubleshooting", title: "Approval Boundary", url: "troubleshooting.html#triage-heading" },
+          ],
+        },
+        {
+          key: "continuity-records",
+          label: "Continuity records",
+          query: "continuity records handoff topic map decisions open questions",
+          answerTitle: "Continuity keeps long work navigable",
+          answer:
+            "Continuity records preserve objectives, decisions, open questions, files, risks, and next actions so a future Codex session does not have to guess what happened.",
+          links: [
+            { page: "Home", title: "Continuity Records", url: "index.html#continuity-records" },
+            { page: "Evidence", title: "Continuity", url: "audit-summary.html" },
+          ],
+        },
+        {
+          key: "correction-loop",
+          label: "Correction loop",
+          query: "correction loop candidate error issue log fix verify",
+          answerTitle: "Corrections become part of the system",
+          answer:
+            "NoDrift treats suspected mistakes as things to inspect, classify, correct, and verify. Public material can describe the loop without exposing private correction records.",
+          links: [
+            { page: "Home", title: "Correction Safeguards", url: "index.html#correction-safeguards" },
+            { page: "Evidence", title: "Issue Log", url: "error-log.html" },
+          ],
+        },
+        {
+          key: "model-boundary",
+          label: "Model boundary",
+          query: "does not control model hallucination LLM output reception",
+          answerTitle: "NoDrift governs the work around the model",
+          answer:
+            "NoDrift does not guarantee model behavior or eliminate all errors. It governs how work receives, checks, records, challenges, and acts on AI output.",
+          links: [
+            { page: "Evidence", title: "Reception Layer", url: "audit-summary.html" },
+            { page: "Technical", title: "Technical Review", url: "technical-info.html" },
+          ],
+        },
+        {
+          key: "public-evidence",
+          label: "Public evidence",
+          query: "public safe evidence snapshot audit issue categories",
+          answerTitle: "Public evidence is intentionally limited",
+          answer:
+            "Public evidence should show safe summaries, review boundaries, and issue categories without publishing private project memory, exact diagnostic prompts, or buyer-only files.",
+          links: [
+            { page: "Evidence", title: "Audit Summary", url: "audit-summary.html" },
+            { page: "Evidence", title: "Issue Log", url: "error-log.html" },
+          ],
+        },
+        {
+          key: "future-tools",
+          label: "Future tool editions",
+          query: "future tools Claude Code Gemini ChatGPT editions adapt",
+          answerTitle: "The method can expand beyond Codex",
+          answer:
+            "NoDrift begins with Codex, but the discipline can be adapted for other LLM/code-tool environments where instructions, references, approvals, and continuity records can be maintained.",
+          links: [
+            { page: "Evidence", title: "Across LLM Tools", url: "audit-summary.html" },
+            { page: "Home", title: "FAQ", url: "index.html#faq" },
           ],
         },
       ],
