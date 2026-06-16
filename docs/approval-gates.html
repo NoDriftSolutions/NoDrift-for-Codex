@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NoDrift Solutions | Docs | Approval Gates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../page.css?v=surface-2026-06-16-2" />
+  </head>
+  <body>
+    <header><nav class="nav"><a class="brand" href="../index.html">NoDrift Solutions</a><div class="navlinks"><a href="../overview.html">Workflow</a><a href="index.html?v=docs-2026-06-16-8">Docs</a><a href="../packages.html">Product Family</a><a href="../pricing-us.html">Pricing</a><a href="../correction-log.html">Correction Log</a><a href="../technical-index.html">Evidence</a></div></nav></header>
+    <main class="docs-shell">
+      <aside class="docs-sidebar"><span class="docs-kicker">Docs</span><a href="index.html?v=docs-2026-06-16-8">Home</a><a href="overview.html?v=docs-2026-06-16-8">Overview</a><a href="quickstart.html?v=docs-2026-06-16-8">Quickstart</a><a href="core-concepts.html?v=docs-2026-06-16-8">Core Concepts</a><a href="workflow.html?v=docs-2026-06-16-8">Workflow</a><a href="system-boundaries.html?v=docs-2026-06-16-8">System Boundaries</a><a href="customization.html?v=docs-2026-06-16-8">Customization</a><a href="evidence.html?v=docs-2026-06-16-8">Evidence</a><a href="correction-log.html?v=docs-2026-06-16-8">Correction Log</a><a href="technical-review.html?v=docs-2026-06-16-8">Technical Review</a><a href="troubleshooting.html?v=docs-2026-06-16-8">Troubleshooting</a><a href="reference.html?v=docs-2026-06-16-8">Reference</a><a class="active" href="approval-gates.html?v=docs-2026-06-16-8">Approval Gates</a><a href="limitations.html?v=docs-2026-06-16-8">Limitations</a></aside>
+      <article class="docs-content">
+        <section class="docs-hero"><span>Approval</span><h1>Approval Gates</h1><p>Consequential actions still need explicit approval, even when the next step looks obvious.</p></section>
+        <section class="docs-section"><h2>One Clear Next Directive</h2><p>The AI Orchestrator should end substantive turns with one clear next directive written to the user. The user then approves or withholds approval for that directive. In the current operating method, the approval word is <code>go</code>.</p></section>
+        <section class="docs-section"><h2>Approval Applies To The Approved Task</h2><p>When no active <code>/goal</code> governs the run, approval applies only to the directive just approved, including its stated parameters, rather than to every possible adjacent action.</p></section>
+        <section class="docs-section"><h2>Goal-Governed Runs</h2><p>When an active <code>/goal</code> governs the run, <code>go</code> can authorize the bounded string of tasks defined by that goal rather than only one isolated next step. The approval still stays inside the goal's stated scope and does not automatically extend beyond it.</p></section>
+        <section class="docs-section"><h2>Edits, Regeneration, And Destructive Changes</h2><p>Edits, build or regeneration steps, deletes, overwrites, restores, moves, and other changes that can rewrite the snapshot or another working surface should not be inferred from a general request for help.</p></section>
+        <section class="docs-section"><h2>External Actions</h2><p>Publishing, pushing, uploading, sharing, deploying, sending, or using outside accounts are separate approval moments even when the workspace already has access.</p></section>
+        <section class="docs-section"><h2>Broad Claims Need Coverage</h2><p>Claims such as every page, all files, complete, ready, verified, or public-safe require evidence showing what was actually checked. A clean-sounding summary is not enough by itself.</p></section>
+        <section class="docs-note"><h2>Access Is Not Approval</h2><p>Local preview is not publication, repository access is not permission to push, and visible files are not automatically public-safe. Commercial terms, support-readiness language, package internals, and future-tool availability also require exact approved wording before they become website claims.</p></section>
+        <section class="docs-section"><div class="docs-link-row"><a href="limitations.html?v=docs-2026-06-16-8">Limitations</a><a href="troubleshooting.html?v=docs-2026-06-16-8">Troubleshooting</a><a href="../contact.html">Contact</a></div></section>
+      </article>
+    </main>
+    <footer><span>NoDrift Solutions</span><a href="../index.html">Home</a></footer>
+  </body>
+</html>
+
