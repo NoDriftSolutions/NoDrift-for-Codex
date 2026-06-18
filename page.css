@@ -9,6 +9,7 @@
   --green: #28a779;
   --dark: #101418;
   --max: 1240px;
+  --nodrift-line-logo: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20220%20150'%3E%3Cpath%20d%3D'M110%208L116%2060L111.5%2069H108.5L104%2060L110%208ZM110%20142L104%2090L108.5%2081H111.5L116%2090L110%20142Z'%20fill%3D'none'%20stroke%3D'%233fcfd1'%20stroke-width%3D'2.1'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M99%2075L110%2064L121%2075L110%2086Z'%20fill%3D'none'%20stroke%3D'%233fcfd1'%20stroke-width%3D'2.1'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M30%20103V57L76%20103V57M90%20103V57H121C141%2057%20153%2066%20153%2080C153%2094%20141%20103%20121%20103H90M194%2058H166C153%2058%20146%2064%20146%2073C146%2082%20153%2085%20166%2086.5L179%2088C191%2089.5%20198%2095%20198%20103C198%20111%20190%20116%20176%20116H148'%20fill%3D'none'%20stroke%3D'%237f8790'%20stroke-width%3D'4.3'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M89%2059C94%2047%20102%2041%20110%2041C118%2041%20126%2047%20131%2059M89%20101C94%20113%20102%20119%20110%20119C118%20119%20126%20113%20131%20101'%20fill%3D'none'%20stroke%3D'%23b8bec5'%20stroke-width%3D'2.3'%20stroke-linecap%3D'round'%20opacity%3D'.78'%2F%3E%3Cpath%20d%3D'M16%2059V38C16%2034%2018%2032%2022%2031L55%2023M204%2059V38C204%2034%20202%2032%20198%2031L165%2023M16%2091V112C16%20116%2018%20118%2022%20119L55%20127M204%2091V112C204%20116%20202%20118%20198%20119L165%20127'%20fill%3D'none'%20stroke%3D'%239da4ac'%20stroke-width%3D'2.2'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%20opacity%3D'.82'%2F%3E%3Cpath%20d%3D'M4%2075H24M196%2075H216'%20fill%3D'none'%20stroke%3D'%233fcfd1'%20stroke-width%3D'1.9'%20stroke-linecap%3D'round'%20opacity%3D'.72'%2F%3E%3C%2Fsvg%3E");
 }
 
 * {
@@ -1861,8 +1862,13 @@ p {
 .mark {
   width: 46px;
   height: 46px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--blue), var(--green));
+  border-radius: 0;
+  background-color: transparent;
+  background-image: var(--nodrift-line-logo);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 42px 42px;
+  opacity: 0.92;
 }
 
 .dark {
