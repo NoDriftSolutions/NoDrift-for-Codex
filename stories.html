@@ -3,35 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NoDrift Solutions</title>
+    <title>NoDrift Solutions | Stories</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="page.css?v=homepage-pain-stories-2026-06-18-1" />
+    <link rel="stylesheet" href="page.css?v=stories-2026-06-18-1" />
   </head>
   <body>
     <header><nav class="nav" aria-label="NoDrift site links"><a class="brand" href="index.html">NoDrift Solutions</a><div class="navlinks"><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="packages.html">Product Family</a><a href="pricing-us.html">Pricing</a><a href="correction-log.html">Correction Log</a><a href="technical-index.html">Evidence</a></div></nav></header>
     <main>
-      <section class="page-hero home-hero">
-        <div class="home-orbit-field" aria-hidden="true"></div>
-        <div class="hero-copy title-one-line"><h1>NoDrift</h1><div class="rule"></div><p>NoDrift makes AI feel less like a brilliant guesser and more like a project partner you can keep under control.</p><p>Everyone who uses AI knows the pain: it drifts, hallucinates, forgets the thread, burns time, and makes you explain the same thing again.</p><p>NoDrift helps reduce that drag so the work feels calmer, clearer, easier to steer, and more worth the time you put into it.</p></div>
+      <section class="page-hero story-hero">
+        <div class="hero-copy title-one-line"><h1>Stories</h1><div class="rule"></div><p>Two public-safe examples of what AI drift can cost when guesses, boundaries, approvals, and project state stop staying separate.</p></div>
       </section>
-      <section class="home-feature-section">
-        <div class="home-feature-intro">
-          <span>Why everyone wants it</span>
-          <h2>Six ways NoDrift makes AI work easier to keep under control.</h2>
-          <p>The value is not more AI chatter. The value is less repeated work, fewer tangents, cleaner claims, and a project that is easier to continue.</p>
-        </div>
-        <div class="home-feature-grid">
-          <article class="home-feature"><h3>Less Repeating Yourself</h3><p>AI projects get exhausting when you have to keep reminding the assistant what the goal is, what was already decided, where the work stands, and what not to touch. NoDrift reduces that drag by keeping the project centered around its current state, so you spend less time rebuilding context and more time making progress.</p></article>
-          <article class="home-feature"><h3>Fewer Side Quests</h3><p>AI can turn one useful question into a chain of tangents until the original project is buried. NoDrift keeps the main work from being hijacked while still preserving good side ideas, so exploration does not cost you focus.</p></article>
-          <article class="home-feature"><h3>Safer Approvals</h3><p>A casual "yes" can accidentally become permission for the assistant to do far more than you intended. NoDrift keeps approval tied to the actual task and boundary, so you can move quickly without losing control.</p></article>
-          <article class="home-feature"><h3>Cleaner Claims</h3><p>AI can make unfinished work sound complete, verified, or ready before the evidence supports it. NoDrift keeps claims tied to what has actually been checked, so private drafts, tests, and public statements do not get overstated.</p></article>
-          <article class="home-feature"><h3>Longer Projects Without Losing The Plot</h3><p>Long AI projects can slowly lose decisions, boundaries, and next steps as the chat grows. NoDrift keeps the project's direction visible across longer work, so each session continues from the real state instead of a half-remembered version.</p></article>
-          <article class="home-feature"><h3>More Confident Stopping Points</h3><p>AI work can leave you unsure what is done, what is risky, and what still needs approval. NoDrift makes stopping points clearer, so you know what changed, what is blocked, and what the next safe step is.</p></article>
-        </div>
-      </section>
-      <section class="home-narrative-section story-page-section" aria-label="NoDrift story examples">
+      <section class="story-page-section" aria-label="NoDrift story examples">
         <article class="story-article" id="marcus-ethan">
           <span>Team example</span>
           <h2>Marcus And Ethan</h2>
@@ -60,39 +44,11 @@
     <footer class="site-footer">
       <div><strong>NoDrift Solutions</strong><p>AI work with less drift, less cleanup, clearer control, and calmer continuity.</p></div>
       <nav aria-label="Footer links">
-        <a href="packages.html">Product Family</a>
-        <a href="pricing-us.html">Pricing</a>
+        <a href="index.html">Home</a>
+        <a href="overview.html">Workflow</a>
         <a href="docs/index.html">Docs</a>
-        <a href="correction-log.html">Correction Log</a>
         <a href="technical-index.html">Evidence</a>
-        <a href="contact.html">Contact</a>
       </nav>
     </footer>
-    <script>
-      (() => {
-        const hero = document.querySelector(".home-hero");
-        const orbit = document.querySelector(".home-orbit-field");
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (hero && orbit && !reduceMotion) {
-          let targetX = 54;
-          let targetY = 48;
-          let currentX = 54;
-          let currentY = 48;
-          const glide = () => {
-            currentX += (targetX - currentX) * 0.026;
-            currentY += (targetY - currentY) * 0.026;
-            orbit.style.setProperty("--orbit-x", `${currentX}%`);
-            orbit.style.setProperty("--orbit-y", `${currentY}%`);
-            orbit.style.setProperty("--orbit-depth", `${0.84 + currentY / 420}`);
-            requestAnimationFrame(glide);
-          };
-          hero.addEventListener("pointermove", (event) => {
-            const rect = hero.getBoundingClientRect();
-            targetX = Math.max(-8, Math.min(108, ((event.clientX - rect.left) / rect.width) * 100));
-            targetY = Math.max(4, Math.min(96, ((event.clientY - rect.top) / rect.height) * 100));
-          });
-          glide();
-        }
-      })();
-    </script>  </body>
+  </body>
 </html>
