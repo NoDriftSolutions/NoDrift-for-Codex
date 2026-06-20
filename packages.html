@@ -3,43 +3,247 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NoDrift Solutions | Product Family</title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>NoDrift Solutions | Product Prices</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="page.css?v=logo-mark-2026-06-18-1" />
+    <link rel="stylesheet" href="page.css?v=product-selector-2026-06-19-15" />
   </head>
   <body>
-    <header><nav class="nav"><a class="brand" href="index.html">NoDrift Solutions</a><div class="navlinks"><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="packages.html">Product Family</a><a href="pricing-us.html">Pricing</a><a href="correction-log.html">Correction Log</a><a href="technical-index.html">Evidence</a></div></nav></header>
+    <header><nav class="nav"><a class="brand" href="index.html">NoDrift Solutions</a><div class="navlinks"><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="blog.html">Blog</a><a href="packages.html">Product Prices</a><a href="correction-log.html">Correction Log</a><a href="technical-index.html">Evidence</a></div></nav></header>
     <main>
-      <section class="page-hero">
-        <div class="hero-copy title-two-line"><h1>Product Family</h1><div class="rule"></div><p>NoDrift is being built as a family of governance packages for the AI project apps people actually use. Start with the app you work in, then choose the level of control your project needs.</p></div>
-        <div class="mock-panel"><div class="panel-top"><span>Choose platform</span><span>Choose level</span></div><div class="panel-body workspace-surface"><div class="surface-rail"><span></span><span></span><span></span><span></span></div><div class="surface-main"><div class="surface-status"><span>Codex</span><span>Claude Code CLI</span><span>More apps</span></div><div class="panel-grid"><div class="panel-card"><div><span class="mark"></span><h3>Demonstrator</h3></div><span class="panel-row-line blue"></span></div><div class="panel-card"><div><span class="mark"></span><h3>Basic</h3></div><span class="panel-row-line green"></span></div><div class="panel-card"><div><span class="mark"></span><h3>Extended</h3></div><span class="panel-row-line medium"></span></div><div class="panel-card"><div><span class="mark"></span><h3>Teams</h3></div><span class="panel-row-line short"></span></div></div><div class="surface-footer"><span></span><span></span><span></span></div></div></div></div>
+      <section class="page-hero product-family-selector-hero">
+        <div class="hero-copy title-two-line">
+          <h1>NoDrift Family of Products</h1>
+          <div class="rule"></div>
+          <p>NoDrift is a family of AI project-control products for builders, programmers, freelancers, teams, managers, and organizations working across different AI apps. Each product path adapts NoDrift to the tool the user actually touches while keeping the same core purpose: stronger source truth, clearer approvals, better continuity, organized corrections, evidence-backed decisions, safer handoffs, and more reliable readiness review. The free Demonstrator shows the working behavior, Basic gives a single user the first serious package, Extended adds deeper controls for longer professional work, and Teams / Enterprise brings NoDrift into shared projects where owners, managers, programmers, and reviewers need the same record.</p>
+        </div>
+        <aside class="product-family-selector-card">
+          <div class="selector-showcase-top">
+            <span class="selector-kicker">Choose App</span>
+            <strong id="selector-brand">Codex</strong>
+          </div>
+            <select id="app-selector" class="app-selector" aria-label="Choose app" onchange="window.setProduct(this.value)">
+              <option value="codex">NoDrift for Codex</option>
+              <option value="claude">NoDrift for Claude Code CLI</option>
+              <option value="replit">NoDrift for Replit</option>
+              <option value="cursor">NoDrift for Cursor</option>
+              <option value="bolt">NoDrift for Bolt</option>
+              <option value="lovable">NoDrift for Lovable</option>
+              <option value="antigravity">NoDrift for Antigravity</option>
+            </select>
+            <p id="app-intro" class="selector-app-intro">NoDrift for Codex supports the way a user actually works in Codex: opening a project, asking Codex to inspect files, using <code>AGENTS.md</code> for persistent instructions, starting with <code>/init</code>, checking changes with <code>/review</code> or <code>/diff</code>, and controlling action through <code>/permissions</code>, sandbox, and approval settings. NoDrift keeps those touchpoints organized so Codex does not drift from source truth, approval boundaries, or the current project state while the user moves from question to edit to handoff. <a href="docs/index.html">Read the NoDrift docs.</a></p>
+        </aside>
       </section>
-      <section class="copy-section">
-        <div class="copy-grid">
-          <article class="copy-card"><h3>NoDrift for Codex</h3><p>For people building inside Codex who want clearer source truth, approval boundaries, continuity, and safer project decisions while they work.</p><div class="button-row"><a class="chip" href="codex.html">View Codex path</a></div></article>
-          <article class="copy-card"><h3>NoDrift for Claude Code CLI</h3><p>For Claude Code CLI users who want the same NoDrift control adapted to local Claude Code project folders and command-line workflow.</p><div class="button-row"><a class="chip" href="claude-code.html">View Claude Code path</a></div></article>
-          <article class="copy-card"><h3>Future App Paths</h3><p>NoDrift is designed as a product family. Additional AI project apps can receive their own package path as the platform-specific behavior is reviewed.</p><div class="button-row"><a class="chip" href="contact.html">Ask about a platform</a></div></article>
-          <article class="copy-card"><h3>Why Platform Paths Matter</h3><p>Each AI app works differently. NoDrift keeps the same core promise while adapting startup, source handling, approval habits, and continuity to the app where the project actually lives.</p><div class="button-row"><a class="chip" href="overview.html">See workflow</a></div></article>
+
+      <section class="product-tier-section">
+        <div class="tier-column-grid">
+          <article class="tier-column demonstrator-tier">
+            <div class="tier-topline"><h3>Demonstrator</h3><strong>Free</strong></div>
+            <p class="tier-includes">Free behavior<br />sample:</p>
+            <ol class="tier-feature-list" id="demo-feature-list">
+              <li><strong>A first taste of AI that stays on task.</strong> Helps the AI stay closer to the current job instead of wandering into unrelated work.</li>
+              <li><strong>A basic reminder to use the project, not guesses.</strong> Guides the AI to check the project's real files, instructions, or visible context before making confident claims.</li>
+              <li><strong>A simple pause before important moves.</strong> Introduces the habit of asking before edits, publishing steps, external actions, or decisions that should not happen casually.</li>
+              <li><strong>A small handoff for the next session.</strong> Gives the next chat a better starting point without including the full carryover system.</li>
+              <li><strong>A clear reason to upgrade.</strong> Shows the behavior difference while making clear that Basic is the first real working package.</li>
+            </ol>
+            <a class="chip" href="contact.html">Contact coming soon</a>
+          </article>
+          <article class="tier-column basic-tier">
+            <div class="tier-topline"><h3>Basic</h3><strong>Price pending</strong></div>
+            <p class="tier-includes">Everything in<br />Demonstrator, plus:</p>
+            <ol class="tier-feature-list" id="basic-feature-list">
+              <li><strong>A real startup routine for serious project work.</strong> Basic helps each session start from the project's purpose, current state, and working boundaries instead of treating every chat like a blank page.</li>
+              <li><strong>Stronger use of the project's actual files and instructions.</strong> The AI is guided to rely on the project's real materials before it answers, recommends changes, or claims something is true.</li>
+              <li><strong>Clear approval rules before edits or risky actions.</strong> Basic makes the AI separate discussion from action, so important moves wait for the user's approval.</li>
+              <li><strong>Project memory that supports real work.</strong> Decisions, constraints, and active direction become easier to carry across sessions.</li>
+              <li><strong>A correction trail when the AI gets something wrong.</strong> Mistakes, corrections, and changed decisions can be recorded so the same issue is less likely to repeat.</li>
+              <li><strong>Better continuity from one session to the next.</strong> The AI has a clearer way to pick up where the project left off, reducing repeated explanations.</li>
+              <li><strong>More careful claims before the user relies on them.</strong> Basic helps the AI avoid saying something is tested, ready, approved, installed, published, or complete unless the project record supports it.</li>
+              <li><strong>Public and private boundary protection.</strong> Basic helps keep private notes, local paths, drafts, internal decisions, and buyer-only material out of public-facing work.</li>
+              <li><strong>Safer setup for one user.</strong> Basic gives an individual user a cleaner install and working structure for using NoDrift inside a real project.</li>
+              <li><strong>The first complete working NoDrift package.</strong> Basic is the first paid level meant for serious day-to-day use, not just a demonstration of the behavior.</li>
+            </ol>
+            <p class="tier-next-step">Basic is the first purchase level for one user. Checkout and public contact are being prepared.</p>
+            <a class="chip" id="basic-preview-link" href="contact.html">Contact coming soon</a>
+          </article>
+          <article class="tier-column extended-tier">
+            <div class="tier-topline"><h3>Extended</h3><strong>Price pending</strong></div>
+            <p class="tier-includes">Everything in<br />Basic, plus:</p>
+            <ol class="tier-feature-list" id="extended-feature-list">
+              <li><strong>Programmed governance Heartbeats.</strong> Adds 12 trigger-based governance refreshes for startup, phase change, readiness, public/private boundaries, external action, package or release work, payment or delivery, compaction, source conflict, correction, token burn-rate, and website or campaign claims.</li>
+              <li><strong>Behavioral Heartbeats.</strong> Adds six named behavior checks for drift, truth/source, effort, brevity, stubbornness, and governance operation. The user can trigger them, and the assistant can run them as a self-audit when a risk pattern appears.</li>
+              <li><strong>Heartbeat-to-correction routing.</strong> Routes user-reported or self-audited behavior problems into correction protocol so the issue is named, the approved boundary is restored, and the correction is preserved when required.</li>
+              <li><strong>Carryover Capsules.</strong> Gives the user a fuller handoff between chats or sessions, including current goal, decisions, boundaries, evidence, blockers, and next safe action.</li>
+              <li><strong>Governance Check Prompts.</strong> Lets the user ask the AI to check whether it is still connected to the current NoDrift rules, project files, approval boundaries, and working agreements.</li>
+              <li><strong>Readiness Review Gates.</strong> Adds a stronger review before anything is called complete, tested, buyer-ready, publish-ready, delivery-ready, or safe to rely on.</li>
+              <li><strong>Evidence Tracking.</strong> Connects claims, decisions, and status updates to the files, tests, approvals, or records that support them.</li>
+              <li><strong>Decision And Risk Tracking.</strong> Records important decisions, open risks, unresolved questions, and items that should not move forward without approval.</li>
+              <li><strong>Control Dashboard Support.</strong> Gives the user a clearer view of active work, blocked work, pending approvals, evidence gaps, open risks, and next safe actions.</li>
+              <li><strong>Advanced Correction Carryover.</strong> Carries corrections forward so the AI does not keep repeating the same mistake after the user has already fixed it.</li>
+              <li><strong>Package And Product Readiness Support.</strong> Helps projects that involve product tiers, buyer-facing claims, website copy, test evidence, release decisions, or package readiness.</li>
+              <li><strong>Professional Continuity For Serious Solo Work.</strong> Turns NoDrift from a working individual package into a deeper professional control system for longer, higher-risk, or buyer-facing projects.</li>
+            </ol>
+            <p class="tier-next-step">Extended is the professional single-user level for longer client, product, or package work that needs deeper continuity and readiness control.</p>
+            <a class="chip" id="extended-preview-link" href="contact.html">Contact coming soon</a>
+          </article>
+          <article class="tier-column teams-tier">
+            <div class="tier-topline"><h3>Teams / Enterprise</h3><strong>Custom</strong></div>
+            <p class="tier-includes">Everything in<br />Extended, plus:</p>
+            <ol class="tier-feature-list" id="teams-feature-list">
+              <li><strong>Role-aware approvals.</strong> Different people can have different approval authority, so a teammate, manager, owner, client, or executive is not treated as having the same decision power.</li>
+              <li><strong>Team routing for the right decision-maker.</strong> The AI is guided to route questions, blockers, approvals, and risks to the correct person or role instead of assuming approval.</li>
+              <li><strong>Shared project memory for more than one person.</strong> Decisions, constraints, corrections, and status can carry across multiple users, not just one individual working alone.</li>
+              <li><strong>Manager and owner visibility.</strong> Senior stakeholders can see what is active, blocked, evidence-backed, waiting for approval, or not ready to move forward.</li>
+              <li><strong>Team correction and incident records.</strong> Mistakes, misunderstandings, bad AI assumptions, and repeated problems can be recorded so the whole team can learn from them.</li>
+              <li><strong>Escalation paths for higher-risk work.</strong> The AI can be guided to stop and escalate when work involves public claims, legal/security concerns, buyer-facing material, or delivery promises.</li>
+              <li><strong>Shared evidence for team decisions.</strong> Claims, approvals, readiness states, and delivery decisions can be tied to supporting files, tests, records, or approvals the team can review.</li>
+              <li><strong>Safer delegation between people and AI sessions.</strong> Work can move from one person, chat, or AI session to another with clearer context, boundaries, decisions, and next actions.</li>
+              <li><strong>Organization-level public/private boundaries.</strong> Teams can better protect private notes, internal decisions, local paths, client material, buyer-only content, and restricted information.</li>
+              <li><strong>Governance for serious multi-person AI work.</strong> Teams / Enterprise turns NoDrift into a shared operating layer for organizations that need controlled AI collaboration.</li>
+            </ol>
+            <p class="tier-next-step">Teams / Enterprise is scoped by the number of users, approval roles, supported apps, training needs, and private setup requirements.</p>
+            <a class="chip" href="contact.html">Contact coming soon</a>
+          </article>
         </div>
       </section>
-      <section class="copy-section">
-        <div class="home-feature-intro">
-          <span>Package levels</span>
-          <h2>Choose how much control the project needs.</h2>
-          <p>The levels are meant to be easy to understand: try it, use it, deepen it, then scale it across a team.</p>
-        </div>
-        <div class="copy-grid">
-          <article class="copy-card"><h3>Demonstrator</h3><p>The free starting point. It shows the core NoDrift behavior: less drift, clearer approval, local project context, and a small continuity trail.</p></article>
-          <article class="copy-card"><h3>Basic</h3><p>The first purchase package. It adds stronger source, approval, memory, correction, and verification controls for real individual project work.</p></article>
-          <article class="copy-card"><h3>Extended</h3><p>The advanced individual package. It adds deeper continuity, behavioral Heartbeats, evidence tracking, readiness review, and control-dashboard support.</p></article>
-          <article class="copy-card"><h3>Teams / Enterprise</h3><p>The organizational package. It adds role-aware approvals, team routing, manager visibility, shared memory, and stronger multi-person governance.</p></article>
-        </div>
-      </section>
-      <section class="next-section"><div class="question-grid"><a class="question-card" href="pricing-us.html"><span>Compare tiers</span><h3>Pricing path</h3></a><a class="question-card" href="claude-code.html#basic-upgrade"><span>Free to first purchase</span><h3>Claude Code Basic</h3></a><a class="question-card" href="technical-index.html"><span>Review record</span><h3>Evidence</h3></a></div></section>
-      <div class="index-band"><div class="index-label">Technical details live on their own pages</div><div class="index-inner"><a class="link-box" href="overview.html"><span class="mark"></span><h3>Workflow</h3><small>How NoDrift keeps project work steady</small></a><a class="link-box" href="docs/index.html"><span class="mark"></span><h3>Docs</h3><small>Advanced reference</small></a><a class="link-box" href="reference-materials.html"><span class="mark"></span><h3>Support</h3><small>Troubleshooting route</small></a><a class="link-box" href="technical-index.html"><span class="mark"></span><h3>Evidence</h3><small>Review record</small></a></div></div>
     </main>
-    <footer><span>NoDrift Solutions</span><a href="index.html">Home</a></footer>
+    <footer class="site-footer"><div class="footer-brand"><strong>NoDrift Solutions</strong><p class="footer-credit">Created by Don Gordon.</p></div><div class="footer-center"><p class="footer-smallprint">NoDrift provides advanced AI project controls for source truth, approvals, continuity, and review. NoDrift organizes corrections, evidence, handoffs, and readiness decisions across the longest AI-assisted projects. Final decisions remain with the user.</p><p class="footer-copyright">&copy; 2026 NoDrift Solutions. All rights reserved.</p></div><nav aria-label="Footer navigation"><a href="packages.html">Product Prices</a><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="technical-index.html">Evidence</a><a href="correction-log.html">Correction Log</a><a href="technical-review.html">Technical Review</a><a href="contact.html">Contact</a></nav></footer>
+    <script>
+      const productCopy = {
+        codex: {
+          title: "NoDrift for Codex",
+          brand: "Codex",
+          intro: "NoDrift for Codex supports the way a user actually works in Codex: opening a project, asking Codex to inspect files, using <code>AGENTS.md</code> for persistent instructions, starting with <code>/init</code>, checking changes with <code>/review</code> or <code>/diff</code>, and controlling action through <code>/permissions</code>, sandbox, and approval settings. NoDrift keeps those touchpoints organized so Codex does not drift from source truth, approval boundaries, or the current project state while the user moves from question to edit to handoff. <a href=\"docs/index.html\">Read the NoDrift docs.</a>",
+          demo1: "Shows the core NoDrift behavior inside Codex: clearer source use, bounded approval, and less project drift.",
+          demo2: "It is meant to prove the working feel quickly without giving away the deeper Basic, Extended, or Teams controls.",
+          basic1: "Everything in Demonstrator, plus stronger individual project governance for real Codex work.",
+          basic2: "Adds fuller source, approval, memory, correction, and verification controls for one Codex user.",
+          extended1: "Everything in Basic, plus deeper continuity and stronger protection for larger Codex projects.",
+          extended2: "Adds carryover, behavioral Heartbeats, readiness review, evidence tracking, and more complete control support.",
+          teams1: "Everything in Extended, plus shared governance for multi-person Codex work.",
+          teams2: "Adds role-aware approvals, team routing, manager visibility, shared evidence, and organization-level control."
+        },
+        claude: {
+          title: "NoDrift for Claude Code CLI",
+          brand: "Claude Code CLI",
+          intro: "NoDrift for Claude Code CLI fits the terminal-first way Claude Code users work: launching Claude inside a local project folder, letting it read the codebase, edit files, run commands, and use <code>CLAUDE.md</code>, <code>MEMORY.md</code>, <code>/memory</code>, Hooks, and MCP connections. NoDrift keeps those local instructions, command approvals, carryover notes, and project facts separated from guesses, so a CLI session can continue without losing what was already decided or approved. <a href=\"docs/index.html\">Read the NoDrift docs.</a>",
+          demo1: "Shows the core NoDrift behavior for Claude Code CLI: local-file source truth, bounded approval, and a visible continuity habit.",
+          demo2: "It is the free starting point, built to demonstrate behavioral control before the buyer moves into Basic.",
+          basic1: "Everything in Demonstrator, plus the first paid Claude Code CLI package for one user.",
+          basic2: "Adds fuller setup, source, approval, correction, continuity, and verification support for real Claude Code CLI work.",
+          extended1: "Everything in Basic, plus deeper professional controls for longer Claude Code CLI projects.",
+          extended2: "Adds behavioral Heartbeats, carryover, readiness review, evidence tracking, and stronger claim-safety support.",
+          teams1: "Everything in Extended, plus team governance for shared Claude Code CLI work.",
+          teams2: "Adds role-aware approvals, team routing, owner or manager visibility, shared evidence, and safer multi-person decisions."
+        },
+        replit: {
+          title: "NoDrift for Replit",
+          brand: "Replit",
+          intro: "NoDrift for Replit is aimed at the browser workspace a builder actually touches: Replit Agent, Plan mode, the Project Editor, files, Console, Run, Preview, Secrets, and Publish. In Replit, an idea can become a running app quickly, then move toward a temporary URL, public deployment, or teammate collaboration. NoDrift gives that flow a control layer so scope, approval, environment settings, deployment risk, and client-facing claims stay visible before the project is published or handed off. <a href=\"docs/index.html\">Read the NoDrift docs.</a>",
+          demo1: "Shows the core NoDrift behavior for Replit-style work: clearer project boundaries, safer approvals, and less drift between idea, build, and deployment.",
+          demo2: "The Demonstrator would focus on the visible working habit, not the deeper paid controls.",
+          basic1: "Everything in Demonstrator, plus stronger one-user governance for a Replit project.",
+          basic2: "Adds clearer setup, source truth, approval, correction, and verification support for individual Replit work.",
+          extended1: "Everything in Basic, plus deeper continuity and evidence control for longer Replit projects.",
+          extended2: "Adds carryover, readiness review, stronger claim safety, and more complete project memory support.",
+          teams1: "Everything in Extended, plus shared governance for teams using Replit.",
+          teams2: "Adds team routing, role-aware approvals, shared evidence, and safer project handoff."
+        },
+        cursor: {
+          title: "NoDrift for Cursor",
+          brand: "Cursor",
+          intro: "NoDrift for Cursor is designed around the editor surfaces Cursor users touch every day: Cursor Desktop, Agent mode, Rules, Skills, MCP servers, CLI, codebase indexing, and file tabs like <code>Dashboard.tsx</code> or <code>feature-prd.md</code>. Cursor can turn ideas into code, review changes, and work across the project, but NoDrift keeps the agent tied to current source truth, approved scope, and the real task instead of letting inline edits, background context, or handoffs outrun the project record. <a href=\"docs/index.html\">Read the NoDrift docs.</a>",
+          demo1: "Shows the core NoDrift behavior for Cursor: clearer source use, bounded changes, and less drift while building in the editor.",
+          demo2: "The Demonstrator would show the behavior without giving away the deeper paid package mechanisms.",
+          basic1: "Everything in Demonstrator, plus stronger one-user governance for Cursor projects.",
+          basic2: "Adds source, approval, memory, correction, and verification controls for individual Cursor work.",
+          extended1: "Everything in Basic, plus deeper continuity for larger Cursor projects.",
+          extended2: "Adds carryover, readiness review, behavioral checks, and stronger evidence control.",
+          teams1: "Everything in Extended, plus shared governance for teams using Cursor.",
+          teams2: "Adds team routing, role-aware approvals, shared evidence, and manager visibility."
+        },
+        bolt: {
+          title: "NoDrift for Bolt",
+          brand: "Bolt",
+          intro: "NoDrift for Bolt is aimed at the fast browser build loop Bolt users touch: the chatbox, Build now, Enhance prompt, Code View, Terminal, Version History, StackBlitz project recovery, token usage, and Publish. Bolt can move from prompt to working app, mobile Preview, database, or public URL quickly. NoDrift adds a pause-and-proof layer so rapid prompts, package changes, deployment choices, and public claims do not outrun the user's approved scope or the actual state of the app. <a href=\"docs/index.html\">Read the NoDrift docs.</a>",
+          demo1: "Shows the core NoDrift behavior for Bolt: clearer scope, safer approvals, and more visible project truth during fast builds.",
+          demo2: "The Demonstrator would show the control habit before the buyer moves into the paid package path.",
+          basic1: "Everything in Demonstrator, plus stronger one-user governance for Bolt projects.",
+          basic2: "Adds source, approval, correction, continuity, and verification support for individual Bolt work.",
+          extended1: "Everything in Basic, plus deeper continuity and claim control for larger Bolt projects.",
+          extended2: "Adds carryover, readiness review, evidence tracking, and stronger release-boundary support.",
+          teams1: "Everything in Extended, plus shared governance for teams using Bolt.",
+          teams2: "Adds role-aware approvals, team routing, shared evidence, and owner visibility."
+        },
+        lovable: {
+          title: "NoDrift for Lovable",
+          brand: "Lovable",
+          intro: "NoDrift for Lovable is built for the product-building surfaces Lovable users touch: chat, Build mode, Plan mode, the Preview toolbar, Select elements, Draw annotation, Edit text inline, Code mode, comments, <code>@Lovable</code>, Version History, Lovable Cloud, and Supabase. Lovable makes it easy to turn prompts and visual edits into product changes, but NoDrift keeps feature boundaries, approvals, client feedback, resolved comments, and source references from getting blurred as the app evolves. <a href=\"docs/index.html\">Read the NoDrift docs.</a>",
+          demo1: "Shows the core NoDrift behavior for Lovable: clearer feature boundaries, safer approvals, and less repeated project explanation.",
+          demo2: "The Demonstrator would keep the free experience focused on visible behavioral control.",
+          basic1: "Everything in Demonstrator, plus stronger one-user governance for Lovable projects.",
+          basic2: "Adds source truth, approval discipline, memory, correction, and verification support.",
+          extended1: "Everything in Basic, plus deeper continuity for larger product builds.",
+          extended2: "Adds carryover, behavioral checks, readiness review, and evidence tracking.",
+          teams1: "Everything in Extended, plus shared governance for teams using Lovable.",
+          teams2: "Adds role-aware approvals, team routing, shared evidence, and safer client or owner review."
+        },
+        antigravity: {
+          title: "NoDrift for Antigravity",
+          brand: "Antigravity",
+          intro: "NoDrift for Antigravity is reserved for the agent-first surfaces Antigravity users touch: Editor View, Manager Surface, Agent Manager, Workflows invoked with <code>/workflow-name</code>, Rules, Artifacts, browser recordings, screenshots, and AGY SDK skills. Antigravity can involve multiple agents working across workspaces, so NoDrift's role is to keep instructions, evidence, approvals, and handoffs visible while the app-specific setup and safe buyer claims are still being mapped. <a href=\"docs/index.html\">Read the NoDrift docs.</a>",
+          demo1: "Shows the core NoDrift behavior for Antigravity-style work: clearer source use, bounded approval, and better continuity.",
+          demo2: "The Demonstrator would show the habit before any stronger readiness or buyer claims are made.",
+          basic1: "Everything in Demonstrator, plus stronger one-user governance for Antigravity projects.",
+          basic2: "Adds source, approval, memory, correction, and verification support once the setup path is proven.",
+          extended1: "Everything in Basic, plus deeper continuity and readiness control.",
+          extended2: "Adds carryover, behavioral checks, evidence tracking, and stronger project review support.",
+          teams1: "Everything in Extended, plus shared governance for teams using Antigravity.",
+          teams2: "Adds role-aware approvals, team routing, shared evidence, and oversight support."
+        }
+      };
+
+      const ids = {
+        intro: "app-intro",
+      };
+
+      const platformSlugs = {
+        codex: "codex",
+        claude: "claude",
+        replit: "replit",
+        cursor: "cursor",
+        bolt: "bolt",
+        lovable: "lovable",
+        antigravity: "antigravity"
+      };
+
+      function setProduct(value) {
+        const copy = productCopy[value] || productCopy.codex;
+        Object.keys(ids).forEach((key) => {
+          const node = document.getElementById(ids[key]);
+          if (key === "intro") {
+            node.innerHTML = copy[key];
+          } else {
+            node.textContent = copy[key];
+          }
+        });
+        document.getElementById("selector-brand").textContent = copy.brand;
+        document.getElementById("basic-preview-link").href = "contact.html";
+        document.getElementById("extended-preview-link").href = "contact.html";
+      }
+
+      window.setProduct = setProduct;
+      document.getElementById("app-selector").addEventListener("input", (event) => {
+        setProduct(event.target.value);
+      });
+      document.getElementById("app-selector").addEventListener("change", (event) => {
+        setProduct(event.target.value);
+      });
+      setProduct(document.getElementById("app-selector").value);
+    </script>
+      <script src="active-nav.js?v=active-nav-2026-06-19-1"></script>
   </body>
 </html>

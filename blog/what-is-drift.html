@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NoDrift Blog | What Is Drift?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../page.css?v=blog-foundation-2026-06-20-11" />
+  </head>
+  <body>
+    <header><nav class="nav" aria-label="NoDrift site links"><a class="brand" href="../index.html">NoDrift Solutions</a><div class="navlinks"><a href="../overview.html">Workflow</a><a href="../docs/index.html">Docs</a><a href="../blog.html">Blog</a><a href="../packages.html">Product Prices</a><a href="../correction-log.html">Correction Log</a><a href="../technical-index.html">Evidence</a></div></nav></header>
+    <main class="blog-post-shell">
+      <article class="blog-post">
+        <a class="blog-backlink" href="../blog.html">Back to Blog</a>
+        <header class="blog-post-header">
+          <span>Drift and correction</span>
+          <h1>What Is Drift?</h1>
+          <p>Drift is when the user asks a question and the AI agent's response changes the topic slightly or a lot, leaving the user to manage a different direction than the one they asked for.</p>
+        </header>
+        <section class="blog-post-meta" aria-label="Post metadata">
+          <div><strong>NoDrift concept</strong><span>Drift check</span></div>
+          <div><strong>User problem</strong><span>The AI agent's response moves away from the actual question.</span></div>
+          <div><strong>Reading depth</strong><span>Foundation</span></div>
+        </section>
+        <section class="blog-post-body">
+          <h2>The problem in plain language</h2>
+          <p>You ask one thing. The AI agent's response begins close enough to sound useful, then slides into a nearby topic, a bigger plan, a different assumption, or a polished response to a question you did not ask.</p>
+          <p>That is drift. Sometimes it is small. Sometimes it changes the whole shape of the work. From the user's side, it can feel like the response is steering away from the actual question. The LLM has no human intent, but the user can still experience the turn as if it is steering away.</p>
+          <h2>A real example</h2>
+          <p>You ask, "Which file controls the approval wording?" The answer starts by naming approval wording, then gives a broad plan for rewriting the workflow, updating the website, and improving the product structure. Some of that may be interesting. It is still not the answer to the question.</p>
+          <p>The cost is not just annoyance. Drift burns attention, time, and tokens. It can also cause the user to approve the wrong work because the conversation quietly moved to a different object.</p>
+          <h2>How NoDrift treats drift</h2>
+          <p>NoDrift does not control the LLM. It works in the user-side project workspace, where it governs how the AI agent receives, interprets, checks, corrects, and carries forward received model information.</p>
+          <p>When drift appears, the useful move is to name it early. A user can say something like: "Heartbeat drift. Answer the exact question I asked. Do not widen the task." That kind of check pulls the AI agent back to the user's actual object.</p>
+          <h2>Practical user hint</h2>
+          <p>When an answer starts changing the subject, do not argue with the whole new direction. Stop the turn, name the drift, and restate the exact question. The earlier drift is caught, the less repair the project needs.</p>
+          <h2>The communication standard</h2>
+          <p>The strongest way to handle received model information is to be critical and literal. Do not reward ambiguity, innuendo, exaggeration, underreporting, overreporting, or lateral movement away from the question.</p>
+          <p>Good communication should move in exact increments: the user gives an idea, the AI agent hears it clearly, adds only what is needed for the user to continue, and the exchange moves back and forth without changing the object. NoDrift works best when the user practices that same quality of communication in the information given to the agent.</p>
+          <p>When the agent explains its reasoning or work path, read the structure of that explanation carefully. Use the same discipline in your own instructions: exact object, exact boundary, exact next step, and no hidden permission.</p>
+          <h2>Safe boundary</h2>
+          <p>NoDrift does not guarantee that drift will never happen. It gives the user a way to notice, name, correct, and record the boundary so the next turn has a better chance of staying tied to the real question.</p>
+        </section>
+        <footer class="blog-related"><span>Related</span><a href="how-heartbeats-help-stop-a-bad-turn.html">How Heartbeats Help Stop a Bad Turn</a><a href="how-correction-protocol-stops-repeated-ai-mistakes.html">How Correction Protocol Stops Repeated AI Mistakes</a></footer>
+      </article>
+    </main>
+    <footer class="site-footer"><div class="footer-brand"><strong>NoDrift Solutions</strong><p class="footer-credit">Created by Don Gordon.</p></div><div class="footer-center"><p class="footer-smallprint">NoDrift is reception-side user workspace governance for AI-assisted work. It helps govern how AI agents handle received model information through source truth, approvals, correction, continuity, evidence, and review. Final decisions remain with the user.</p><p class="footer-copyright">&copy; 2026 NoDrift Solutions. All rights reserved.</p></div><nav aria-label="Footer navigation"><a href="../packages.html">Product Prices</a><a href="../overview.html">Workflow</a><a href="../docs/index.html">Docs</a><a href="../blog.html">Blog</a><a href="../technical-index.html">Evidence</a><a href="../correction-log.html">Correction Log</a><a href="../technical-review.html">Technical Review</a><a href="../contact.html">Contact</a></nav></footer>
+    <script src="../active-nav.js?v=active-nav-2026-06-20-1"></script>
+  </body>
+</html>

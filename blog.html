@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The NoDrift Blog | by Don Gordon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="page.css?v=blog-foundation-2026-06-20-25" />
+  </head>
+  <body>
+    <header><nav class="nav" aria-label="NoDrift site links"><a class="brand" href="index.html">NoDrift Solutions</a><div class="navlinks"><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="blog.html">Blog</a><a href="packages.html">Product Prices</a><a href="correction-log.html">Correction Log</a><a href="technical-index.html">Evidence</a></div></nav></header>
+    <main>
+      <section class="page-hero blog-hero">
+        <div class="hero-copy title-one-line"><h1>The NoDrift Blog</h1><div class="rule"></div><p class="blog-byline"><span>by Don Gordon</span><span>Founder and Creator of NoDrift</span></p><p>Plain-language notes on drift, source truth, approvals, correction, Heartbeats, and reception-side user workspace governance for AI-assisted work.</p></div>
+        <div class="blog-hero-panel" aria-label="Blog learning posts">
+          <span>Learning Series</span>
+          <strong>Start here to learn how NoDrift governs agentic AI work from the user-side project workspace.</strong>
+          <p>The blog explains how NoDrift governs how AI agents receive, verify, correct, and act around model information inside the user workspace.</p>
+        </div>
+      </section>
+      <section class="blog-search-section" aria-label="Blog article finder">
+        <div class="blog-search-heading">
+          <span>Blog Finder</span>
+          <h2>Explore the education layer.</h2>
+          <p>Find NoDrift blog posts by topic, category, user problem, tier relevance, or related AI-agent control concept.</p>
+        </div>
+        <form class="blog-search-box" id="blogSearchForm">
+          <label for="blogSearchInput">Topic or keyword</label>
+          <div>
+            <input id="blogSearchInput" type="search" placeholder="drift, source truth, approval, model information" autocomplete="off" />
+            <button type="submit">Find</button>
+          </div>
+        </form>
+        <div class="blog-filter-row" id="blogFilters" aria-label="Blog category filters"></div>
+        <div class="blog-results" id="blogResults"></div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="footer-brand"><strong>NoDrift Solutions</strong><p class="footer-credit">Created by Don Gordon.</p></div><div class="footer-center"><p class="footer-smallprint">NoDrift is reception-side user workspace governance for AI-assisted work. It helps govern how AI agents handle received model information through source truth, approvals, correction, continuity, evidence, and review. Final decisions remain with the user.</p><p class="footer-copyright">&copy; 2026 NoDrift Solutions. All rights reserved.</p></div><nav aria-label="Footer navigation"><a href="packages.html">Product Prices</a><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="blog.html">Blog</a><a href="technical-index.html">Evidence</a><a href="correction-log.html">Correction Log</a><a href="technical-review.html">Technical Review</a><a href="contact.html">Contact</a></nav></footer>
+    <script>
+      const posts = [
+        { title: "What Is Drift?", url: "blog/what-is-drift.html", category: "Drift and correction", tags: ["drift", "focus", "question"], concept: "Drift check", problem: "The AI agent's response moves away from the actual question.", tier: "All users", audience: "Users working with AI agents", depth: "Foundation", summary: "Drift is when the AI agent's response changes the topic slightly or a lot, leaving the user managing a different problem than the one they asked about." },
+        { title: "How Heartbeats Help Stop a Bad Turn", url: "blog/how-heartbeats-help-stop-a-bad-turn.html", category: "Heartbeats", tags: ["heartbeat", "correction", "self-audit"], concept: "Behavioral Heartbeats", problem: "The AI agent needs a named check before it keeps going wrong.", tier: "All users", audience: "Users working with AI agents", depth: "Foundation", summary: "Heartbeats are named workspace checks that require the AI agent to pause, re-check, and route risk correctly." },
+        { title: "Why Source Truth Beats Chat Memory", url: "blog/why-source-truth-beats-chat-memory.html", category: "Source truth", tags: ["source truth", "evidence", "memory", "chat memory"], concept: "Verified project state", problem: "The AI agent sounds sure but may be relying on chat memory instead of the project record.", tier: "All users", audience: "Project users", depth: "Foundation", summary: "NoDrift disallows chat memory as source truth because memory can be compressed, compacted, misinterpreted, forgotten, or lost." },
+        { title: "Why A Casual Yes Should Not Mean Everything", url: "blog/why-a-casual-yes-should-not-mean-everything.html", category: "Approval gates", tags: ["approval", "go", "permission"], concept: "Bounded approval", problem: "A small yes becomes broad permission for the AI agent.", tier: "All users", audience: "Anyone approving agentic AI work", depth: "Foundation", summary: "Bounded approval prevents the AI agent from treating a narrow user approval as broad permission." },
+        { title: "How Correction Protocol Stops Repeated LLM Mistakes", url: "blog/how-correction-protocol-stops-repeated-ai-mistakes.html", category: "Drift and correction", tags: ["correction", "mistake", "lesson"], concept: "Correction route", problem: "The same LLM-generated mistake keeps returning through the AI agent.", tier: "All users", audience: "Long-project users", depth: "Foundation", summary: "Correction protocol records the agent's received-information error and requires future turns to respect the correction." },
+        { title: "Why NoDrift Works On The User Side", url: "blog/why-nodrift-works-on-the-user-side.html", category: "Reception-side governance", tags: ["AI agent", "user-side project workspace", "LLM boundary"], concept: "Reception-side user workspace governance", problem: "Users need a way to govern AI-agent work without claiming to control the LLM.", tier: "All users", audience: "Users and serious readers", depth: "Foundation", summary: "NoDrift works where practical control can be applied: the user-side workspace where received model information is checked before it becomes project action." },
+        { title: "What Happens When An AI Agent Receives LLM Information", url: "blog/what-it-means-to-receive-an-llm-answer.html", category: "Reception-side governance", tags: ["received model information", "interpretation", "AI agent"], concept: "Reception-side information handling", problem: "Fluent received model information gets accepted before the AI agent classifies it correctly.", tier: "All users", audience: "Users working with AI agents", depth: "Foundation", summary: "When an AI agent receives model information, the workspace rules should determine whether it is fact, draft, suggestion, question, warning, or unsupported claim." },
+        { title: "Why Interpretation Is A Control Problem", url: "blog/why-interpretation-is-a-governance-problem.html", category: "Reception-side governance", tags: ["interpretation", "control", "meaning"], concept: "Interpretation control", problem: "The same received model information is treated as meaning different things.", tier: "All users", audience: "Professional users", depth: "Foundation", summary: "A key control moment happens when the AI agent interprets received model information inside the project workspace." },
+        { title: "How To Tell A Draft From A Decision", url: "blog/how-to-tell-a-draft-from-a-decision.html", category: "Approval gates", tags: ["draft", "decision", "approval"], concept: "Decision boundary", problem: "A draft starts acting like an approved decision.", tier: "All users", audience: "Project owners", depth: "Practical", summary: "A draft is material for review. A decision is a bounded user choice. NoDrift helps the AI agent keep those meanings separate." },
+        { title: "Why Fluent Answers Still Need Boundaries", url: "blog/why-fluent-answers-still-need-boundaries.html", category: "Source truth", tags: ["fluency", "boundaries", "claims"], concept: "Fluency boundary", problem: "Polished received model information sounds reliable before the evidence is checked.", tier: "All users", audience: "Users working with AI agents", depth: "Practical", summary: "Fluency is not verification. Workspace boundaries tell the AI agent what smooth received model information can and cannot be used for." },
+        { title: "How To Stop A Conversation From Becoming The Project", url: "blog/how-to-stop-a-conversation-from-becoming-the-project.html", category: "Carryover and continuity", tags: ["conversation", "project state", "continuity"], concept: "Conversation-to-project boundary", problem: "The chat becomes the authority instead of the project record.", tier: "All users", audience: "Long-project users", depth: "Practical", summary: "The conversation is not the project. NoDrift keeps AI-agent activity tied to records, decisions, and current project state." },
+        { title: "Why Control Starts When LLM Information Enters The Workspace", url: "blog/why-user-control-starts-after-the-answer-arrives.html", category: "Practical user hints", tags: ["AI agent control", "model information", "next action"], concept: "Post-answer control", problem: "The AI agent's next action is shaped by information that has not been classified.", tier: "All users", audience: "Users working with AI agents", depth: "Foundation", summary: "The strongest control point is often when received model information enters the workspace: classify it, check it, correct it, or reject it before the AI agent acts on it." },
+        { title: "Why Literal Communication Matters With LLM Information", url: "blog/why-literal-communication-matters-with-llm-information.html", category: "Practical user hints", tags: ["literal communication", "exact object", "critical reading"], concept: "Literal communication standard", problem: "The AI agent treats implied meaning as permission or direction.", tier: "All users", audience: "Users working with AI agents", depth: "Practical", summary: "Literal communication keeps agentic AI work tied to the exact object instead of letting the conversation slide into nearby meaning." },
+        { title: "How Ambiguity Turns Into Extra Work", url: "blog/how-ambiguity-turns-into-extra-work.html", category: "Drift and correction", tags: ["ambiguity", "drift", "clarification"], concept: "Ambiguity control", problem: "Unclear language becomes unnecessary project work.", tier: "All users", audience: "Project owners", depth: "Practical", summary: "Ambiguity is expensive because it lets the AI agent fill gaps that should have been clarified before work continued." },
+        { title: "Why Next-Step Control Protects The Project", url: "blog/why-next-step-control-protects-the-project.html", category: "Approval gates", tags: ["next step", "approval", "bounded task"], concept: "Next-step boundary", problem: "The AI agent keeps moving after the exact task is complete.", tier: "All users", audience: "Anyone approving agentic AI work", depth: "Practical", summary: "Next-step control keeps momentum from turning into unapproved action after the exact question or task is complete." },
+        { title: "Why Evidence Should Be Named Before Confidence", url: "blog/why-evidence-should-be-named-before-confidence.html", category: "Source truth", tags: ["evidence", "confidence", "source truth"], concept: "Evidence-before-confidence", problem: "A confident answer moves faster than the source truth.", tier: "All users", audience: "Professional users", depth: "Foundation", summary: "Confidence is easy to generate. Evidence is what tells the project whether confidence is earned." },
+        { title: "How Overreporting And Underreporting Create Drift", url: "blog/how-overreporting-and-underreporting-create-drift.html", category: "Drift and correction", tags: ["overreporting", "underreporting", "status"], concept: "Reporting discipline", problem: "The AI agent reports in a way that hides the exact state.", tier: "All users", audience: "Long-project users", depth: "Practical", summary: "Too much information and too little information can both move the project away from the exact question." },
+        { title: "Why Handoff Needs A Current-State Record", url: "blog/why-handoff-needs-a-current-state-record.html", category: "Carryover and continuity", tags: ["handoff", "current state", "continuity"], concept: "Current-state handoff", problem: "The AI agent resumes from stale or incomplete context.", tier: "All users", audience: "Long-project users", depth: "Practical", summary: "Handoff works better when the AI agent starts from a current-state record instead of memory, assumption, or old context." },
+        { title: "Why Stubborn AI Behavior Needs A Name", url: "blog/why-stubborn-ai-behavior-needs-a-name.html", category: "Drift and correction", tags: ["stubbornness", "correction", "pattern"], concept: "Stubbornness check", problem: "The AI agent repeats a direction after correction.", tier: "All users", audience: "Users working with AI agents", depth: "Practical", summary: "When the AI agent keeps pushing the same wrong direction, naming the behavior is often the first step toward stopping it." },
+        { title: "Why Brevity Is A Control Tool", url: "blog/why-brevity-is-a-control-tool.html", category: "Practical user hints", tags: ["brevity", "status", "control"], concept: "Brevity check", problem: "The answer becomes too long to control.", tier: "All users", audience: "Long-project users", depth: "Practical", summary: "A bounded answer is easier to inspect, correct, and approve." },
+        { title: "Why Role Boundaries Matter In Agentic AI Work", url: "blog/why-role-boundaries-matter-in-agentic-ai-work.html", category: "Reception-side governance", tags: ["role", "authority", "AI agent"], concept: "Role boundary", problem: "The AI agent begins acting as if helpfulness is authority.", tier: "All users", audience: "Users and serious readers", depth: "Foundation", summary: "The AI agent can help manage work, but the user still owns judgment, permission, and final responsibility." },
+        { title: "How To Handle Source Conflicts", url: "blog/how-to-handle-source-conflicts.html", category: "Source truth", tags: ["source conflict", "evidence", "source truth"], concept: "Source conflict check", problem: "The AI agent chooses one source without showing the conflict.", tier: "All users", audience: "Professional users", depth: "Practical", summary: "When two sources disagree, the safest move is to stop and name the conflict." },
+        { title: "Why Go Is Not A Blank Check", url: "blog/why-go-is-not-a-blank-check.html", category: "Approval gates", tags: ["go", "approval", "bounded task"], concept: "Go boundary", problem: "The AI agent expands approval beyond the named action.", tier: "All users", audience: "Anyone approving agentic AI work", depth: "Foundation", summary: "A visible go should approve the next bounded task, not every adjacent idea the AI agent can imagine." },
+        { title: "Why Context Loss Is A Project Risk", url: "blog/why-context-loss-is-a-project-risk.html", category: "Carryover and continuity", tags: ["context loss", "continuity", "current state"], concept: "Context protection", problem: "The AI agent resumes without the controlling state.", tier: "All users", audience: "Long-project users", depth: "Foundation", summary: "Context loss is the moment the AI agent starts working from an incomplete picture of the project." },
+        { title: "Why Member Learning Should Stay Practical", url: "blog/why-member-learning-should-stay-practical.html", category: "Product tiers", tags: ["member", "paid education", "depth"], concept: "Member education boundary", problem: "Readers need useful depth without protected system exposure.", tier: "Member", audience: "Members and buyers", depth: "Practical", summary: "Paid education should help users think and communicate better without giving away the full operating depth of NoDrift." },
+        { title: "Why Claims Need Plain Evidence", url: "blog/why-claims-need-plain-evidence.html", category: "Source truth", tags: ["claims", "evidence", "verification"], concept: "Claim discipline", problem: "The AI agent makes statements stronger than the evidence.", tier: "All users", audience: "Professional users", depth: "Foundation", summary: "A claim is only useful when the user can see what supports it." },
+        { title: "Why User Responsibility Still Matters", url: "blog/why-user-responsibility-still-matters.html", category: "Reception-side governance", tags: ["user responsibility", "authority", "judgment"], concept: "User authority", problem: "Users expect governance to replace judgment.", tier: "All users", audience: "Users and serious readers", depth: "Foundation", summary: "NoDrift gives the AI agent clearer workspace governance, but it does not remove the user's responsibility for judgment." },
+        { title: "Why Review Before Action Saves Work", url: "blog/why-review-before-action-saves-work.html", category: "Approval gates", tags: ["review", "approval", "preview"], concept: "Review gate", problem: "The AI agent acts before the user sees the proposed change.", tier: "All users", audience: "Project owners", depth: "Practical", summary: "A review step can prevent the expensive work of undoing the wrong action." },
+        { title: "Why External Actions Need A Harder Gate", url: "blog/why-external-actions-need-a-harder-gate.html", category: "Approval gates", tags: ["external action", "permission", "access"], concept: "External action gate", problem: "The AI agent treats external action like ordinary local work.", tier: "All users", audience: "Project owners", depth: "Advanced", summary: "External action can transmit, publish, spend, or expose, so it needs a harder approval gate." },
+        { title: "Why NoDrift Is Not Magic", url: "blog/why-nodrift-is-not-magic.html", category: "Reception-side governance", tags: ["boundary", "LLM", "workspace control"], concept: "Public boundary", problem: "People misunderstand governance as model control.", tier: "All users", audience: "Users and serious readers", depth: "Foundation", summary: "NoDrift works because it makes project control explicit. It is not a hidden force that changes the LLM." }
+      ];
+      const accessByTitle = {
+        "What Is Drift?": "Free",
+        "Why Source Truth Beats Chat Memory": "Advanced",
+        "Why A Casual Yes Should Not Mean Everything": "Free",
+        "How Heartbeats Help Stop a Bad Turn": "Advanced",
+        "How Correction Protocol Stops Repeated LLM Mistakes": "Advanced",
+        "Why NoDrift Works On The User Side": "Free",
+        "What Happens When An AI Agent Receives LLM Information": "Member",
+        "Why Interpretation Is A Control Problem": "Member",
+        "How To Tell A Draft From A Decision": "Member",
+        "Why Fluent Answers Still Need Boundaries": "Member",
+        "How To Stop A Conversation From Becoming The Project": "Member",
+        "Why Control Starts When LLM Information Enters The Workspace": "Member",
+        "Why Literal Communication Matters With LLM Information": "Member",
+        "How Ambiguity Turns Into Extra Work": "Member",
+        "Why Next-Step Control Protects The Project": "Member",
+        "Why Evidence Should Be Named Before Confidence": "Member",
+        "How Overreporting And Underreporting Create Drift": "Member",
+        "Why Handoff Needs A Current-State Record": "Advanced",
+        "Why Stubborn AI Behavior Needs A Name": "Member",
+        "Why Brevity Is A Control Tool": "Member",
+        "Why Role Boundaries Matter In Agentic AI Work": "Member",
+        "How To Handle Source Conflicts": "Advanced",
+        "Why Go Is Not A Blank Check": "Free",
+        "Why Context Loss Is A Project Risk": "Advanced",
+        "Why Member Learning Should Stay Practical": "Member",
+        "Why Claims Need Plain Evidence": "Member",
+        "Why User Responsibility Still Matters": "Free",
+        "Why Review Before Action Saves Work": "Member",
+        "Why External Actions Need A Harder Gate": "Advanced",
+        "Why NoDrift Is Not Magic": "Free"
+      };
+      const readStorageKey = "nodriftBlogReadPosts";
+      const getReadPosts = () => {
+        try {
+          return JSON.parse(localStorage.getItem(readStorageKey) || "{}");
+        } catch {
+          return {};
+        }
+      };
+      const setPostRead = url => {
+        try {
+          const readPosts = getReadPosts();
+          readPosts[url] = true;
+          localStorage.setItem(readStorageKey, JSON.stringify(readPosts));
+        } catch {}
+      };
+      const results = document.getElementById("blogResults");
+      const filters = document.getElementById("blogFilters");
+      const input = document.getElementById("blogSearchInput");
+      const form = document.getElementById("blogSearchForm");
+      const categories = ["All"].concat([...new Set(posts.map(post => post.category))]);
+      let activeCategory = "All";
+      const renderFilters = () => {
+        filters.innerHTML = categories.map(category => `<button type="button" class="${category === activeCategory ? "active" : ""}" data-category="${category}">${category}</button>`).join("");
+      };
+      const renderPosts = () => {
+        const query = input.value.trim().toLowerCase();
+        const readPosts = getReadPosts();
+        const filtered = posts.filter(post => {
+          const access = accessByTitle[post.title] || "Member";
+          const text = `${post.title} ${post.category} ${post.tags.join(" ")} ${post.concept} ${post.problem} ${post.tier} ${post.audience} ${post.depth} ${post.summary} ${access}`.toLowerCase();
+          return (activeCategory === "All" || post.category === activeCategory) && (!query || text.includes(query));
+        });
+        results.innerHTML = filtered.map(post => {
+          const access = accessByTitle[post.title] || "Member";
+          const accessClass = access.toLowerCase().replace(/\s+/g, "-");
+          const read = Boolean(readPosts[post.url]);
+          return `<a class="blog-result-card ${read ? "read" : ""}" href="${post.url}" data-post-url="${post.url}"><div class="blog-card-topline"><b class="blog-access-badge ${accessClass}">${access}</b><span>${post.category}</span><b class="blog-read-badge ${read ? "" : "unread"}">${read ? "Read" : "Unread"}</b></div><h3>${post.title}</h3><p>${post.summary}</p><dl><div><dt>Concept</dt><dd>${post.concept}</dd></div><div><dt>Tags</dt><dd>${post.tags.join(", ")}</dd></div><div><dt>Tier</dt><dd>${post.tier}</dd></div></dl></a>`;
+        }).join("") || `<p class="blog-empty">No posts matched that search.</p>`;
+      };
+      results.addEventListener("click", event => {
+        const card = event.target.closest(".blog-result-card");
+        if (!card) return;
+        setPostRead(card.dataset.postUrl);
+      });
+      filters.addEventListener("click", event => {
+        const button = event.target.closest("[data-category]");
+        if (!button) return;
+        activeCategory = button.dataset.category;
+        renderFilters();
+        renderPosts();
+      });
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        renderPosts();
+      });
+      input.addEventListener("input", renderPosts);
+      renderFilters();
+      renderPosts();
+    </script>
+    <script src="active-nav.js?v=active-nav-2026-06-20-1"></script>
+  </body>
+</html>
