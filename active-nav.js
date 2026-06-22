@@ -1,5 +1,8 @@
 (function () {
   var current = window.location.pathname.split("/").pop() || "index.html";
+  if (current.indexOf(".") === -1) {
+    current += ".html";
+  }
   var sectionMap = {
     "overview.html": "overview.html",
     "packages.html": "packages.html",
