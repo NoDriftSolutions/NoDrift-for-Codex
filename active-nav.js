@@ -4,7 +4,8 @@
     "overview.html": "overview.html",
     "packages.html": "packages.html",
     "correction-log.html": "correction-log.html",
-    "technical-index.html": "technical-index.html"
+    "technical-index.html": "technical-index.html",
+    "portfolio-test-matrix.html": "technical-index.html"
   };
 
   var docsPath = window.location.pathname.indexOf("/docs/") !== -1;
