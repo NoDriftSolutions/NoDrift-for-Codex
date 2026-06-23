@@ -7,37 +7,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="page.css?v=blog-foundation-2026-06-20-25" />
+    <link rel="stylesheet" href="page.css?v=mobile-emergency-2026-06-23" />
   </head>
   <body>
-    <header><nav class="nav" aria-label="NoDrift site links"><a class="brand" href="index.html">NoDrift Solutions</a><div class="navlinks"><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="blog.html">Blog</a><a href="packages.html">Product Prices</a><a href="correction-log.html">Correction Log</a><a href="portfolio-test-matrix.html">Evidence</a></div></nav></header>
+    <header><nav class="nav" aria-label="NoDrift site links"><a class="brand" href="index.html">NoDrift Solutions</a><div class="navlinks"><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="blog.html">Blog</a><a href="packages.html">Product Prices</a><a href="portfolio-test-matrix.html">Testing Evidence</a></div></nav></header>
     <main>
       <section class="page-hero blog-hero">
         <div class="hero-copy title-one-line"><h1>The NoDrift Blog</h1><div class="rule"></div><p class="blog-byline"><span>by Don Gordon</span><span>Founder and Creator of NoDrift</span></p><p>Plain-language notes on drift, source truth, approvals, correction, Heartbeats, and reception-side user workspace governance for AI-assisted work.</p></div>
         <div class="blog-hero-panel" aria-label="Blog learning posts">
-          <span>Learning Series</span>
-          <strong>Start here to learn how NoDrift governs agentic AI work from the user-side project workspace.</strong>
-          <p>Free posts are public. Member and Advanced posts are listed as previews while paid access groups are being established.</p>
+          <span>Learn NoDrift</span>
+          <strong>Learn about controlling agentic AI work from the user side.</strong>
+          <p>Read practical notes on drift, source truth, approvals, correction, and how NoDrift keeps AI-assisted work under user control.</p>
         </div>
       </section>
       <section class="blog-search-section" aria-label="Blog article finder">
-        <div class="blog-search-heading">
-          <span>Blog Finder</span>
-          <h2>Explore the education layer.</h2>
-          <p>Find NoDrift blog posts by topic, category, user problem, access level, or related AI-agent control concept.</p>
-        </div>
         <form class="blog-search-box" id="blogSearchForm">
-          <label for="blogSearchInput">Topic or keyword</label>
+          <label for="blogSearchInput">Search the Blog</label>
           <div>
             <input id="blogSearchInput" type="search" placeholder="drift, source truth, approval, model information" autocomplete="off" />
             <button type="submit">Find</button>
           </div>
         </form>
-        <div class="blog-filter-row" id="blogFilters" aria-label="Blog category filters"></div>
-        <div class="blog-results" id="blogResults"></div>
+        <div class="blog-library-layout">
+          <aside class="blog-access-sidebar" aria-label="Blog access groups">
+            <div class="blog-sidebar-heading">
+              <span>Article Library</span>
+              <h3>Browse by access.</h3>
+            </div>
+            <div class="blog-access-nav" id="blogAccessNav"></div>
+          </aside>
+          <div class="blog-library-main">
+            <div class="blog-filter-label">Filter articles by topic in selected group</div>
+            <div class="blog-filter-row" id="blogFilters" aria-label="Blog category filters"></div>
+            <p class="blog-active-summary" id="blogActiveSummary"></p>
+            <div class="blog-results" id="blogResults"></div>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="site-footer"><div class="footer-brand"><strong>NoDrift Solutions</strong><p class="footer-credit">Created by Don Gordon.</p></div><div class="footer-center"><p class="footer-smallprint">NoDrift is reception-side user workspace governance for AI-assisted work. It helps govern how AI agents handle received model information through source truth, approvals, correction, continuity, evidence, and review. Final decisions remain with the user.</p><p class="footer-copyright">&copy; 2026 NoDrift Solutions. All rights reserved.</p></div><nav aria-label="Footer navigation"><a href="packages.html">Product Prices</a><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="blog.html">Blog</a><a href="portfolio-test-matrix.html">Evidence</a><a href="correction-log.html">Correction Log</a><a href="technical-review.html">Technical Review</a><a href="contact.html">Contact</a></nav></footer>
+    <footer class="site-footer"><div class="footer-brand"><strong>NoDrift Solutions</strong><p class="footer-credit">Created by Don Gordon.</p></div><div class="footer-center"><p class="footer-smallprint">NoDrift is reception-side user workspace governance for AI-assisted work. It helps govern how AI agents handle received model information through source truth, approvals, correction, continuity, evidence, and review. Final decisions remain with the user.</p><p class="footer-copyright">&copy; 2026 NoDrift Solutions. All rights reserved.</p></div><nav aria-label="Footer navigation"><a href="packages.html">Product Prices</a><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="blog.html">Blog</a><a href="portfolio-test-matrix.html">Testing Evidence</a></nav></footer>
     <script>
       const posts = [
         { title: "What Is Drift?", url: "blog/what-is-drift.html", category: "Drift and correction", tags: ["drift", "focus", "question"], concept: "Drift check", problem: "The AI agent's response moves away from the actual question.", tier: "All users", audience: "Users working with AI agents", depth: "Foundation", summary: "Drift is when the AI agent's response changes the topic slightly or a lot, leaving the user managing a different problem than the one they asked about." },
@@ -120,37 +128,163 @@
       };
       const results = document.getElementById("blogResults");
       const filters = document.getElementById("blogFilters");
+      const accessNav = document.getElementById("blogAccessNav");
+      const activeSummary = document.getElementById("blogActiveSummary");
       const input = document.getElementById("blogSearchInput");
       const form = document.getElementById("blogSearchForm");
       const categories = ["All"].concat([...new Set(posts.map(post => post.category))]);
+      const accessGroups = ["All", "Free", "Member", "Advanced"];
+      const postsWithAccess = posts.map(post => ({ ...post, access: accessByTitle[post.title] || "Member" }));
       let activeCategory = "All";
+      const initialParams = new URLSearchParams(window.location.search);
+      let activeAccess = accessGroups.includes(initialParams.get("access")) ? initialParams.get("access") : "All";
+      let activeTopic = initialParams.get("topic") || "";
+      const openAccessGroups = new Set(["Free", "Member", "Advanced"]);
+      const groupLabel = group => group === "All" ? "All Posts" : group;
+      const includedAccess = group => {
+        if (group === "Advanced") return ["Free", "Member", "Advanced"];
+        if (group === "Member") return ["Free", "Member"];
+        if (group === "Free") return ["Free"];
+        return ["Free", "Member", "Advanced"];
+      };
+      const accessDescription = group => {
+        if (group === "Advanced") return "Advanced, Member, and Free";
+        if (group === "Member") return "Member and Free";
+        return groupLabel(group);
+      };
+      const slugify = value => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const displayTopic = slug => {
+        const tag = posts.flatMap(post => post.tags).find(topic => slugify(topic) === slug);
+        return tag || slug.replace(/-/g, " ");
+      };
+      const setTopic = topic => {
+        activeTopic = topic;
+        const params = new URLSearchParams(window.location.search);
+        if (activeTopic) {
+          params.set("topic", activeTopic);
+        } else {
+          params.delete("topic");
+        }
+        if (activeAccess !== "All") {
+          params.set("access", activeAccess);
+        } else {
+          params.delete("access");
+        }
+        const query = params.toString();
+        window.history.replaceState({}, "", `${window.location.pathname}${query ? "?" + query : ""}`);
+      };
+      const setAccess = group => {
+        activeAccess = group;
+        const params = new URLSearchParams(window.location.search);
+        if (activeAccess !== "All") {
+          params.set("access", activeAccess);
+        } else {
+          params.delete("access");
+        }
+        if (activeTopic) {
+          params.set("topic", activeTopic);
+        } else {
+          params.delete("topic");
+        }
+        const query = params.toString();
+        window.history.replaceState({}, "", `${window.location.pathname}${query ? "?" + query : ""}`);
+      };
       const renderFilters = () => {
         filters.innerHTML = categories.map(category => `<button type="button" class="${category === activeCategory ? "active" : ""}" data-category="${category}">${category}</button>`).join("");
+      };
+      const renderAccessNav = () => {
+        accessNav.innerHTML = accessGroups.map(group => {
+          const groupPosts = group === "All" ? postsWithAccess : postsWithAccess.filter(post => post.access === group);
+          const visibleCount = group === "All" ? postsWithAccess.length : postsWithAccess.filter(post => includedAccess(group).includes(post.access)).length;
+          const isOpen = group !== "All" && openAccessGroups.has(group);
+          const titleLinks = isOpen ? groupPosts.map(post => `<a href="${post.url}" data-post-url="${post.url}">${post.title}</a>`).join("") : "";
+          const groupClass = group.toLowerCase().replace(/\s+/g, "-");
+          return `<section class="blog-access-group access-${groupClass} ${group === activeAccess ? "active" : ""} ${isOpen ? "open" : ""}"><button type="button" data-access="${group}" aria-expanded="${group === "All" ? "false" : String(isOpen)}"><span>${groupLabel(group)}</span><b>${visibleCount}</b></button>${titleLinks ? `<div class="blog-access-title-list">${titleLinks}</div>` : ""}</section>`;
+        }).join("");
       };
       const renderPosts = () => {
         const query = input.value.trim().toLowerCase();
         const readPosts = getReadPosts();
-        const filtered = posts.filter(post => {
-          const access = accessByTitle[post.title] || "Member";
-          const text = `${post.title} ${post.category} ${post.tags.join(" ")} ${post.concept} ${post.problem} ${post.tier} ${post.audience} ${post.depth} ${post.summary} ${access}`.toLowerCase();
-          return (activeCategory === "All" || post.category === activeCategory) && (!query || text.includes(query));
+        const filtered = postsWithAccess.filter(post => {
+          const text = `${post.title} ${post.category} ${post.tags.join(" ")} ${post.concept} ${post.problem} ${post.tier} ${post.audience} ${post.depth} ${post.summary} ${post.access}`.toLowerCase();
+          const matchesTopic = !activeTopic || post.tags.some(tag => slugify(tag) === activeTopic);
+          return includedAccess(activeAccess).includes(post.access) && (activeCategory === "All" || post.category === activeCategory) && matchesTopic && (!query || text.includes(query));
         });
+        const activeFilters = [];
+        if (activeAccess !== "All") activeFilters.push(accessDescription(activeAccess));
+        if (activeCategory !== "All") activeFilters.push(activeCategory);
+        if (activeTopic) activeFilters.push(`Topic: ${displayTopic(activeTopic)}`);
+        if (query) activeFilters.push(`Search: ${input.value.trim()}`);
+        activeSummary.innerHTML = activeFilters.length ? `${filtered.length} article${filtered.length === 1 ? "" : "s"} shown for ${activeFilters.join(" / ")}.${activeTopic ? ` <button type="button" class="blog-clear-topic" data-clear-topic>Clear topic</button>` : ""}` : "";
         results.innerHTML = filtered.map(post => {
-          const access = accessByTitle[post.title] || "Member";
-          const accessClass = access.toLowerCase().replace(/\s+/g, "-");
+          const accessClass = post.access.toLowerCase().replace(/\s+/g, "-");
           const read = Boolean(readPosts[post.url]);
-          return `<a class="blog-result-card ${read ? "read" : ""}" href="${post.url}" data-post-url="${post.url}"><div class="blog-card-topline"><b class="blog-access-badge ${accessClass}">${access}</b><span>${post.category}</span><b class="blog-read-badge ${read ? "" : "unread"}">${read ? "Read" : "Unread"}</b></div><h3>${post.title}</h3><p>${post.summary}</p><dl><div><dt>Concept</dt><dd>${post.concept}</dd></div><div><dt>Tags</dt><dd>${post.tags.join(", ")}</dd></div><div><dt>Tier</dt><dd>${post.tier}</dd></div></dl></a>`;
+          const topicLinks = post.tags.map(tag => {
+            const topicSlug = slugify(tag);
+            const accessParam = activeAccess !== "All" ? `&access=${encodeURIComponent(activeAccess)}` : "";
+            return `<a class="blog-topic-link ${topicSlug === activeTopic ? "active" : ""}" href="blog.html?topic=${topicSlug}${accessParam}" data-topic="${topicSlug}">${tag}</a>`;
+          }).join("");
+          return `<article class="blog-result-card ${read ? "read" : ""}" data-post-url="${post.url}" tabindex="0"><div class="blog-card-topline"><b class="blog-access-badge ${accessClass}">${post.access}</b><span>${post.category}</span><b class="blog-read-badge ${read ? "" : "unread"}">${read ? "Read" : "Unread"}</b></div><h3><a class="blog-card-title-link" href="${post.url}" data-post-url="${post.url}">${post.title}</a></h3><p>${post.summary}</p><dl><div><dt>Main idea</dt><dd>${post.concept}</dd></div><div><dt>Related topics</dt><dd class="blog-topic-list">${topicLinks}</dd></div><div><dt>Access</dt><dd>${post.tier}</dd></div></dl></article>`;
         }).join("") || `<p class="blog-empty">No posts matched that search.</p>`;
       };
       results.addEventListener("click", event => {
+        const topicLink = event.target.closest("[data-topic]");
+        if (topicLink) {
+          event.preventDefault();
+          event.stopPropagation();
+          activeCategory = "All";
+          setTopic(topicLink.dataset.topic);
+          renderFilters();
+          renderPosts();
+          return;
+        }
+        const titleLink = event.target.closest("a[data-post-url]");
+        if (titleLink) {
+          setPostRead(titleLink.dataset.postUrl);
+          return;
+        }
         const card = event.target.closest(".blog-result-card");
         if (!card) return;
         setPostRead(card.dataset.postUrl);
+        window.location.href = card.dataset.postUrl;
+      });
+      results.addEventListener("keydown", event => {
+        if (event.key !== "Enter") return;
+        const card = event.target.closest(".blog-result-card");
+        if (!card) return;
+        setPostRead(card.dataset.postUrl);
+        window.location.href = card.dataset.postUrl;
+      });
+      activeSummary.addEventListener("click", event => {
+        if (!event.target.closest("[data-clear-topic]")) return;
+        setTopic("");
+        renderPosts();
+      });
+      accessNav.addEventListener("click", event => {
+        const titleLink = event.target.closest("a[data-post-url]");
+        if (titleLink) {
+          setPostRead(titleLink.dataset.postUrl);
+          return;
+        }
+        const button = event.target.closest("[data-access]");
+        if (!button) return;
+        const selectedAccess = button.dataset.access;
+        setAccess(selectedAccess);
+        if (selectedAccess !== "All") {
+          if (openAccessGroups.has(selectedAccess)) {
+            openAccessGroups.delete(selectedAccess);
+          } else {
+            openAccessGroups.add(selectedAccess);
+          }
+        }
+        renderAccessNav();
+        renderPosts();
       });
       filters.addEventListener("click", event => {
         const button = event.target.closest("[data-category]");
         if (!button) return;
         activeCategory = button.dataset.category;
+        setTopic("");
         renderFilters();
         renderPosts();
       });
@@ -160,6 +294,7 @@
       });
       input.addEventListener("input", renderPosts);
       renderFilters();
+      renderAccessNav();
       renderPosts();
     </script>
     <script src="active-nav.js?v=active-nav-2026-06-20-1"></script>
