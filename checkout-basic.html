@@ -18,57 +18,39 @@
           <h1>NoDrift Basic</h1>
           <p id="selected-app-label" class="delivery-selected-app">For Codex</p>
           <div class="rule"></div>
-          <p>Basic is the complete individual NoDrift Governance Portfolio for one user who wants serious reception-side control over AI-assisted project work.</p>
+          <p>Basic is the complete individual NoDrift Governance Portfolio for one user who wants controlled, source-aware AI project work.</p>
         </div>
         <aside class="delivery-status-panel basic-tier">
           <span>Standard price</span>
           <strong>$175</strong>
-          <p>Payment setup is in progress. This page does not collect payment, create an invoice, or open a public download.</p>
+          <p id="buy-copy">Payment processing is being connected. Until the payment button is live, use this purchase link to contact NoDrift directly.</p>
+          <a id="buy-link" class="tester-download-button purchase-action-button" href="mailto:sales@nodriftsolutions.com?subject=Buy%20NoDrift%20Basic%20for%20Codex">Buy NoDrift Basic</a>
         </aside>
       </section>
       <section class="delivery-detail-section">
         <article>
-          <span>What Basic is for</span>
-          <h2>Single-user project control</h2>
-          <p>NoDrift Basic helps one user start from project truth, preserve approval boundaries, carry corrections forward, and reduce wasted AI turns caused by drift, assumptions, and lost context.</p>
+          <span>What you receive</span>
+          <h2>One-user governance portfolio</h2>
+          <p>NoDrift Basic helps one user start from project truth, preserve approval boundaries, carry corrections forward, protect private/public boundaries, and reduce wasted AI turns caused by drift, assumptions, and lost context.</p>
         </article>
         <article>
-          <span>Delivery status</span>
-          <h2>Structured, not live</h2>
-          <p>When the approved payment route is active, this page can route buyers to payment and then private delivery. Until then, it remains an information page only.</p>
+          <span>Delivery</span>
+          <h2>Private delivery after purchase</h2>
+          <p>Confirmed buyers receive the correct NoDrift Basic portfolio for the selected app, plus access to future updates for that purchased portfolio.</p>
         </article>
       </section>
-      <section class="delivery-process-section">
-        <div>
-          <span>Included direction</span>
-          <ul>
-            <li>Governed startup behavior.</li>
-            <li>Source-truth and approval discipline.</li>
-            <li>Project memory and correction trail support.</li>
-            <li>Public/private boundary protection.</li>
-            <li>Buyer update record after confirmed delivery.</li>
-          </ul>
-        </div>
-        <div>
-          <span>Not active here</span>
-          <ul>
-            <li>No live checkout.</li>
-            <li>No payment collection.</li>
-            <li>No automatic delivery.</li>
-            <li>No public portfolio download.</li>
-          </ul>
-        </div>
-      </section>
-      <section class="next-section"><div class="question-grid"><a id="demo-link" class="question-card" href="free-demonstrator.html?app=codex"><span>Free path</span><h3>Get the Free Demonstrator</h3></a><a class="question-card" href="packages.html"><span>Change app or tier</span><h3>Product Prices</h3></a><a class="question-card" href="docs/index.html"><span>Learn</span><h3>Docs</h3></a></div></section>
     </main>
     <footer class="site-footer"><div class="footer-brand"><strong>NoDrift Solutions</strong><p class="footer-credit">Created by Don Gordon.</p></div><div class="footer-center"><p class="footer-smallprint">NoDrift provides advanced AI project controls for source truth, approvals, continuity, and review. NoDrift organizes corrections, evidence, handoffs, and readiness decisions across the longest AI-assisted projects. Final decisions remain with the user.</p><p class="footer-copyright">&copy; 2026 NoDrift Solutions. All rights reserved.</p></div><nav aria-label="Footer navigation"><a href="packages.html">Product Prices</a><a href="overview.html">Workflow</a><a href="docs/index.html">Docs</a><a href="portfolio-test-matrix.html">Testing Evidence</a></nav></footer>
-    <script src="active-nav.js?v=active-nav-2026-06-19-1"></script>
+    <script src="active-nav.js?v=active-nav-tester-menu-2026-06-24"></script>
     <script>
       const appNames = { codex: "Codex", claude: "Claude Code", replit: "Replit", cursor: "Cursor", bolt: "Bolt", lovable: "Lovable", antigravity: "Antigravity" };
-      const selectedApp = new URLSearchParams(window.location.search).get("app") || "codex";
+      const params = new URLSearchParams(window.location.search);
+      const selectedApp = params.get("app") || "codex";
       const appName = appNames[selectedApp] || "Codex";
       document.getElementById("selected-app-label").textContent = `For ${appName}`;
-      document.getElementById("demo-link").href = `free-demonstrator.html?app=${selectedApp}`;
+      const buySubject = encodeURIComponent(`Buy NoDrift Basic for ${appName}`);
+      document.getElementById("buy-link").href = `mailto:sales@nodriftsolutions.com?subject=${buySubject}`;
+      document.getElementById("buy-link").textContent = `Buy NoDrift Basic for ${appName}`;
     </script>
   </body>
 </html>
