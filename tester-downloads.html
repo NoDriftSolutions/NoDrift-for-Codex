@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>NoDrift Solutions | Tester Download Check</title>
+    <meta name="description" content="A public-safe NoDrift tester page for checking product-selection and dummy download behavior without exposing real product files." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="page.css?v=tester-downloads-2026-06-24" />
+    <style>
+      .tester-public-page main {
+        padding: 42px 0 54px;
+      }
+
+      .tester-public-hero {
+        width: min(900px, calc(100vw - 48px));
+        margin: 0 auto 22px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .tester-public-hero h1 {
+        color: var(--ink);
+        font-size: clamp(34px, 4vw, 56px);
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tester-public-hero p {
+        max-width: 780px;
+        color: #5f6d7d;
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      .tester-boundary {
+        border-left: 4px solid #ad781a;
+        background: #fff8ea;
+        padding: 13px 15px;
+        color: #5f430b;
+        line-height: 1.45;
+      }
+
+      .tester-public-panel {
+        width: min(900px, calc(100vw - 48px));
+        margin: 0 auto;
+        padding: 24px;
+        border: 1px solid rgba(214, 220, 228, 0.92);
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 18px 40px rgba(31, 43, 58, 0.07);
+        display: grid;
+        gap: 18px;
+      }
+
+      .tester-control-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .tester-control-grid label {
+        display: grid;
+        gap: 8px;
+        color: #687383;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .tester-control-grid select {
+        width: 100%;
+        border: 1px solid rgba(214, 220, 228, 0.95);
+        border-radius: 8px;
+        padding: 13px 14px;
+        color: #172232;
+        background: #ffffff;
+        font: inherit;
+      }
+
+      .tester-product-card {
+        border: 1px solid rgba(214, 220, 228, 0.94);
+        border-radius: 10px;
+        background: #fbfcfe;
+        padding: 18px;
+      }
+
+      .tester-product-card h2 {
+        margin: 0 0 8px;
+        color: #172232;
+        font-size: clamp(24px, 2.6vw, 34px);
+        font-weight: 400;
+        line-height: 1.1;
+      }
+
+      .tester-product-card p {
+        margin: 0;
+        color: #5f6d7d;
+        line-height: 1.52;
+      }
+
+      .tester-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .tester-meta-grid div {
+        border: 1px solid rgba(214, 220, 228, 0.92);
+        border-radius: 8px;
+        padding: 11px;
+        background: #ffffff;
+      }
+
+      .tester-meta-grid span {
+        display: block;
+        margin-bottom: 5px;
+        color: #687383;
+        font-size: 12px;
+      }
+
+      .tester-meta-grid strong {
+        display: block;
+        color: #172232;
+        font-size: 14px;
+      }
+
+      .tester-actions {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+        margin-top: 18px;
+      }
+
+      .tester-button {
+        border: 1px solid rgba(31, 123, 100, 0.34);
+        border-radius: 8px;
+        padding: 16px 18px;
+        color: #ffffff;
+        background: #1f7b64;
+        box-shadow: 0 14px 28px rgba(31, 123, 100, 0.16);
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .tester-button:hover,
+      .tester-button:focus-visible {
+        background: #176752;
+      }
+
+      .tester-button.secondary,
+      .tester-button.secondary:hover,
+      .tester-button.secondary:focus-visible {
+        border-color: rgba(110, 122, 138, 0.26);
+        background: #eef2f6;
+        color: #253448;
+        box-shadow: none;
+      }
+
+      .tester-status {
+        margin: 0;
+        border: 1px solid rgba(31, 123, 100, 0.24);
+        border-radius: 8px;
+        background: #f2fbf5;
+        padding: 11px 12px;
+        color: #1d5d43;
+        line-height: 1.45;
+      }
+
+      .tester-confirmation {
+        display: none;
+        border: 2px solid #1f7b64;
+        border-radius: 10px;
+        background: #f0fbf5;
+        padding: 16px;
+        color: #153f2f;
+      }
+
+      .tester-confirmation.is-visible {
+        display: grid;
+        gap: 10px;
+      }
+
+      .tester-confirmation h2 {
+        margin: 0;
+        color: #153f2f;
+        font-size: 22px;
+      }
+
+      .tester-confirmation p {
+        margin: 0;
+        color: #265744;
+        line-height: 1.45;
+      }
+
+      .tester-proof-list {
+        margin: 0;
+        padding-left: 18px;
+        color: #314256;
+        line-height: 1.65;
+      }
+
+      .tester-proof-list strong {
+        color: #172232;
+      }
+
+      @media (max-width: 720px) {
+        .tester-public-page main {
+          padding: 28px 0 42px;
+        }
+
+        .tester-public-hero,
+        .tester-public-panel {
+          width: min(100vw - 24px, 640px);
+        }
+
+        .tester-control-grid,
+        .tester-meta-grid,
+        .tester-actions {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="tester-public-page">
+    <header>
+      <nav class="nav">
+        <a class="brand" href="index.html">NoDrift Solutions</a>
+        <div class="navlinks">
+          <a href="overview.html">Workflow</a>
+          <a href="packages.html">Product Prices</a>
+          <a href="documentation.html">Setup</a>
+          <a href="blog.html">Blog</a>
+          <a href="portfolio-test-matrix.html">Testing Evidence</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tester-public-hero">
+        <h1>Tester Download Check</h1>
+        <p>This page lets invited testers verify the selection and download-confirmation flow before real product delivery is activated.</p>
+        <div class="tester-boundary"><strong>Safety boundary:</strong> this page creates dummy text receipts only. It does not expose NoDrift Governance Portfolio files, payment pages, buyer records, private folders, or live delivery files.</div>
+      </section>
+
+      <section class="tester-public-panel" aria-label="Tester download controls">
+        <div class="tester-control-grid">
+          <label for="tester-app-select">Choose App
+            <select id="tester-app-select">
+              <option value="codex">Codex</option>
+              <option value="claude-code-cli">Claude Code CLI</option>
+              <option value="replit">Replit</option>
+              <option value="cursor">Cursor</option>
+              <option value="bolt">Bolt</option>
+              <option value="lovable">Lovable</option>
+              <option value="antigravity">Antigravity</option>
+            </select>
+          </label>
+
+          <label for="tester-tier-select">Choose Tier
+            <select id="tester-tier-select">
+              <option value="demonstrator">Demonstrator</option>
+              <option value="basic">Basic</option>
+              <option value="extended">Extended</option>
+              <option value="teams">Teams</option>
+            </select>
+          </label>
+        </div>
+
+        <article class="tester-product-card">
+          <h2 id="download-heading">Test Codex Demonstrator</h2>
+          <p id="download-copy">Generate a safe dummy receipt to confirm that the tester's browser can complete the download action.</p>
+
+          <div class="tester-meta-grid">
+            <div><span>Selected app</span><strong id="selected-app">Codex</strong></div>
+            <div><span>Selected tier</span><strong id="selected-tier">Demonstrator</strong></div>
+            <div><span>File type</span><strong>Dummy receipt</strong></div>
+          </div>
+
+          <div class="tester-actions">
+            <button id="tester-download-button" class="tester-button" type="button">Generate safe test file</button>
+            <button id="tester-reset" class="tester-button secondary" type="button">Reset</button>
+          </div>
+
+          <p id="tester-status" class="tester-status">Ready for safe dummy download testing.</p>
+        </article>
+
+        <div id="tester-confirmation" class="tester-confirmation" role="alert" aria-live="polite">
+          <h2>Safe test download created</h2>
+          <p id="tester-confirmation-copy">The browser generated a dummy receipt. No real NoDrift product file was used.</p>
+          <button id="close-confirmation" class="tester-button secondary" type="button">Close confirmation</button>
+        </div>
+
+        <article class="tester-product-card">
+          <h2>What this confirms</h2>
+          <ul class="tester-proof-list">
+            <li><strong>Selection:</strong> the page routes by app and tier.</li>
+            <li><strong>Download behavior:</strong> the tester's browser accepts a generated file.</li>
+            <li><strong>Visible feedback:</strong> the page confirms the completed action.</li>
+            <li><strong>Safety:</strong> no real NoDrift product file, payment, account, upload, or buyer delivery occurs.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><strong>NoDrift Solutions</strong><p class="footer-credit">Created by Don Gordon.</p></div>
+      <div class="footer-center"><p class="footer-smallprint">NoDrift helps reduce AI-assisted rework by keeping source truth, approvals, continuity, corrections, evidence, handoffs, and readiness decisions visible. Final decisions remain with the user.</p><p class="footer-copyright">&copy; 2026 NoDrift Solutions. All rights reserved.</p></div>
+      <nav aria-label="Footer navigation"><a href="packages.html">Product Prices</a><a href="docs/index.html">Docs</a><a href="portfolio-test-matrix.html">Testing Evidence</a></nav>
+    </footer>
+
+    <script src="active-nav.js?v=active-nav-tester-downloads-2026-06-24"></script>
+    <script>
+      const apps = {
+        "codex": { label: "Codex", id: "CODEX" },
+        "claude-code-cli": { label: "Claude Code CLI", id: "CLAUDE-CODE-CLI" },
+        "replit": { label: "Replit", id: "REPLIT" },
+        "cursor": { label: "Cursor", id: "CURSOR" },
+        "bolt": { label: "Bolt", id: "BOLT" },
+        "lovable": { label: "Lovable", id: "LOVABLE" },
+        "antigravity": { label: "Antigravity", id: "ANTIGRAVITY" }
+      };
+
+      const tiers = {
+        "demonstrator": { label: "Demonstrator", id: "DEMO" },
+        "basic": { label: "Basic", id: "BASIC" },
+        "extended": { label: "Extended", id: "EXT" },
+        "teams": { label: "Teams", id: "TEAMS" }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const appSelect = document.getElementById("tester-app-select");
+      const tierSelect = document.getElementById("tester-tier-select");
+      const action = document.getElementById("tester-download-button");
+      const reset = document.getElementById("tester-reset");
+      const status = document.getElementById("tester-status");
+      const confirmation = document.getElementById("tester-confirmation");
+      const confirmationCopy = document.getElementById("tester-confirmation-copy");
+
+      function selected() {
+        const appKey = apps[appSelect.value] ? appSelect.value : "codex";
+        const tierKey = tiers[tierSelect.value] ? tierSelect.value : "demonstrator";
+        return { appKey, tierKey, app: apps[appKey], tier: tiers[tierKey] };
+      }
+
+      function productId(item) {
+        return `NDS-TEST-${item.app.id}-${item.tier.id}-V1`;
+      }
+
+      function safeFilename(item) {
+        return `NoDrift_SAFE_TEST_${item.app.id}_${item.tier.id}.txt`;
+      }
+
+      function updateSelectedDownload() {
+        const item = selected();
+        const id = productId(item);
+        document.getElementById("download-heading").textContent = `Test ${item.app.label} ${item.tier.label}`;
+        document.getElementById("download-copy").textContent = `Safe dummy receipt for ${id}. This is not a real NoDrift Governance Portfolio download.`;
+        document.getElementById("selected-app").textContent = item.app.label;
+        document.getElementById("selected-tier").textContent = item.tier.label;
+        action.textContent = `Generate ${item.app.label} ${item.tier.label} test file`;
+        status.textContent = "Ready for safe dummy download testing.";
+        confirmation.classList.remove("is-visible");
+
+        const nextParams = new URLSearchParams(window.location.search);
+        nextParams.set("app", item.appKey);
+        nextParams.set("tier", item.tierKey);
+        history.replaceState(null, "", `${window.location.pathname}?${nextParams.toString()}`);
+      }
+
+      appSelect.value = apps[params.get("app")] ? params.get("app") : "codex";
+      tierSelect.value = tiers[params.get("tier")] ? params.get("tier") : "demonstrator";
+
+      appSelect.addEventListener("change", updateSelectedDownload);
+      tierSelect.addEventListener("change", updateSelectedDownload);
+
+      action.addEventListener("click", () => {
+        const item = selected();
+        const id = productId(item);
+        const lines = [
+          "NoDrift safe public tester file",
+          `Product ID: ${id}`,
+          `App: ${item.app.label}`,
+          `Tier: ${item.tier.label}`,
+          "This is not a real NoDrift product file.",
+          "No payment, public product download, upload, account action, or buyer delivery occurred."
+        ];
+        const blob = new Blob([lines.join("\n")], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = safeFilename(item);
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        URL.revokeObjectURL(url);
+
+        status.textContent = `Safe dummy file generated for ${item.app.label} ${item.tier.label}. No real NoDrift product file was used.`;
+        confirmationCopy.textContent = `Dummy receipt generated for ${item.app.label} ${item.tier.label}. This was a safe tester-flow check only.`;
+        confirmation.classList.add("is-visible");
+      });
+
+      reset.addEventListener("click", () => {
+        status.textContent = "Ready for safe dummy download testing.";
+        confirmation.classList.remove("is-visible");
+      });
+
+      document.getElementById("close-confirmation").addEventListener("click", () => {
+        confirmation.classList.remove("is-visible");
+      });
+
+      updateSelectedDownload();
+    </script>
+  </body>
+</html>
